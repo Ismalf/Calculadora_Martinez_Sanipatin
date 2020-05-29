@@ -27,31 +27,37 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
+
             <Button
-                android:id="@+id/clear"
+                android:id="@+id/parenthesisopen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:text="C" />
+                android:onClick="addToInput"
+                android:text="(" />
             <Space
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
+
             <Button
-                android:id="@+id/clearall"
+                android:id="@+id/parenthesisclose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:text="CA" />
+                android:onClick="addToInput"
+                android:text=")" />
             <Space
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
+
             <Button
                 android:id="@+id/backspace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="backspace"
                 android:text="<" />
             <Space
                 android:layout_weight="1"
@@ -62,6 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="%" />
             <Space
                 android:layout_weight="1"
@@ -85,6 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="1" />
 
             <Space
@@ -97,6 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="2" />
 
             <Space
@@ -108,6 +117,7 @@
                 android:id="@+id/number3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="addToInput"
                 android:background="#00FFFFFF"
                 android:text="3" />
 
@@ -117,15 +127,17 @@
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/multiply"
+                android:id="@+id/multi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="addToInput"
                 android:background="#00FFFFFF"
                 android:text="x" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="addToInput"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -143,6 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="4" />
             <Space
                 android:layout_weight="1"
@@ -153,6 +166,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="5" />
             <Space
                 android:layout_weight="1"
@@ -163,6 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="6" />
             <Space
                 android:layout_weight="1"
@@ -173,6 +188,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="+" />
             <Space
                 android:layout_weight="1"
@@ -190,6 +206,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
             <Button
+                android:onClick="addToInput"
                 android:id="@+id/number7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -201,6 +218,7 @@
                 android:layout_width="wrap_content"/>
             <Button
                 android:id="@+id/number8"
+                android:onClick="addToInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
@@ -214,6 +232,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="9" />
             <Space
                 android:layout_weight="1"
@@ -223,6 +242,7 @@
                 android:id="@+id/substract"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="addToInput"
                 android:background="#00FFFFFF"
                 android:text="-" />
             <Space
@@ -240,11 +260,15 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
+
             <Button
-                android:id="@+id/more"
+                android:id="@+id/clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#00FFFFFF" />
+                android:background="#45555454"
+                android:onClick="clearInput"
+                android:text="C" />
+
             <Space
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -254,6 +278,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="0" />
             <Space
                 android:layout_weight="1"
@@ -264,16 +289,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="." />
             <Space
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
+
             <Button
                 android:id="@+id/calculate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
+                android:background="#9EE68B2A"
+                android:elevation="3.0dp"
+                android:ellipsize="none"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="calculate"
                 android:text="=" />
             <Space
                 android:layout_weight="1"
@@ -283,41 +314,36 @@
 
     </TableLayout>
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Calculadora" />
-
     <View
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="355dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="1dp"
         android:background="#1D1D1D"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/results" />
 
     <TextView
         android:id="@+id/results"
-        android:layout_width="411dp"
-        android:layout_height="359dp"
+        android:layout_width="414dp"
+        android:layout_height="280dp"
         android:layout_marginBottom="8dp"
         android:gravity="bottom|end"
         android:orientation="vertical"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/input"
+        android:layout_width="413dp"
+        android:layout_height="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/results" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
