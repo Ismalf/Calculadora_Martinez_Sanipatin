@@ -6,16 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TableLayout
-        android:layout_width="413dp"
-        android:layout_height="312dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="418dp"
-        android:layout_marginEnd="8dp"
-        android:visibility="visible"
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="0dp"
+        android:layout_height="235dp"
+        android:layout_marginBottom="13dp"
+        android:background="#00424242"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/input"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="136dp"
+        android:background="#00221B1B"
+        android:gravity="end"
+        android:orientation="vertical"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/results" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="9dp"
+        android:background="#1D1D1D"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="6dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -23,10 +68,11 @@
             android:clipChildren="false"
             android:gravity="center"
             android:orientation="horizontal">
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/parenthesisopen"
@@ -35,10 +81,11 @@
                 android:background="#00FFFFFF"
                 android:onClick="addToInput"
                 android:text="(" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/parenthesisclose"
@@ -47,22 +94,25 @@
                 android:background="#00FFFFFF"
                 android:onClick="addToInput"
                 android:text=")" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/backspace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="backspace"
-                android:text="<" />
+                android:onClick="removeLast"
+                android:text="DEL" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/divide"
                 android:layout_width="wrap_content"
@@ -70,10 +120,11 @@
                 android:background="#00FFFFFF"
                 android:onClick="addToInput"
                 android:text="%" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
@@ -117,8 +168,8 @@
                 android:id="@+id/number3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="addToInput"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="3" />
 
             <Space
@@ -130,14 +181,78 @@
                 android:id="@+id/multi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="addToInput"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="x" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="addToInput" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/number4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
                 android:onClick="addToInput"
+                android:text="4" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/number5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:onClick="addToInput"
+                android:text="5" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/number6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:onClick="addToInput"
+                android:text="6" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/addition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:onClick="addToInput"
+                android:text="+" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -146,87 +261,38 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
-            <Space
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-            <Button
-                android:id="@+id/number4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
-                android:onClick="addToInput"
-                android:text="4" />
-            <Space
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-            <Button
-                android:id="@+id/number5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
-                android:onClick="addToInput"
-                android:text="5" />
-            <Space
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-            <Button
-                android:id="@+id/number6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
-                android:onClick="addToInput"
-                android:text="6" />
-            <Space
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-            <Button
-                android:id="@+id/addition"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
-                android:onClick="addToInput"
-                android:text="+" />
-            <Space
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
+
             <Button
-                android:onClick="addToInput"
                 android:id="@+id/number7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="7" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/number8"
-                android:onClick="addToInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="8" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/number9"
                 android:layout_width="wrap_content"
@@ -234,21 +300,24 @@
                 android:background="#00FFFFFF"
                 android:onClick="addToInput"
                 android:text="9" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/substract"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="addToInput"
                 android:background="#00FFFFFF"
+                android:onClick="addToInput"
                 android:text="-" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
@@ -256,10 +325,11 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/clear"
@@ -270,9 +340,10 @@
                 android:text="C" />
 
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/number0"
                 android:layout_width="wrap_content"
@@ -280,10 +351,12 @@
                 android:background="#00FFFFFF"
                 android:onClick="addToInput"
                 android:text="0" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/decimal"
                 android:layout_width="wrap_content"
@@ -291,10 +364,11 @@
                 android:background="#00FFFFFF"
                 android:onClick="addToInput"
                 android:text="." />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/calculate"
@@ -306,44 +380,13 @@
                 android:hapticFeedbackEnabled="true"
                 android:onClick="calculate"
                 android:text="=" />
+
             <Space
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
         </LinearLayout>
 
     </TableLayout>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="1dp"
-        android:background="#1D1D1D"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/results" />
-
-    <TextView
-        android:id="@+id/results"
-        android:layout_width="414dp"
-        android:layout_height="280dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="bottom|end"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/input"
-        android:layout_width="413dp"
-        android:layout_height="90dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/results" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
