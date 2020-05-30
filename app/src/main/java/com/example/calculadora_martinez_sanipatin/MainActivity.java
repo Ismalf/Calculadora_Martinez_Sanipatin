@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.calculadora_martinez_sanipatin.Core.Core;
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.decimal):  this._input+="."; input.setText(_input);break;
             case (R.id.addition):  this._input+="+"; input.setText(_input);break;
             case (R.id.substract):  this._input+="-"; input.setText(_input);break;
-            case (R.id.multi):  this._input+="x"; input.setText(_input);break;
+            case (R.id.multi):  this._input+="*"; input.setText(_input);break;
 
         }
     }
@@ -64,4 +65,5 @@ public class MainActivity extends AppCompatActivity {
         _input = new Core().calculate(_input);
         input.setText(_input);
     }
+
 }

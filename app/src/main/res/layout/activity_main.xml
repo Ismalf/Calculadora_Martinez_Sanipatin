@@ -17,6 +17,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/input"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +27,7 @@
         android:layout_height="65dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="136dp"
-        android:background="#00221B1B"
+        android:background="#9EECE9E9"
         android:gravity="end"
         android:orientation="vertical"
         android:textColor="#000000"
@@ -104,9 +105,17 @@
                 android:id="@+id/backspace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
+                android:background="#9E8E8C8C"
+                android:elevation="3.0dp"
+                android:ellipsize="none"
+                android:hapticFeedbackEnabled="true"
                 android:onClick="removeLast"
                 android:text="DEL" />
+
+
+
+
+
 
             <Space
                 android:layout_width="wrap_content"
@@ -119,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
                 android:onClick="addToInput"
-                android:text="%" />
+                android:text="/" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -183,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
                 android:onClick="addToInput"
-                android:text="x" />
+                android:text="*" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -335,7 +344,7 @@
                 android:id="@+id/clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#45555454"
+                android:background="#F44336"
                 android:onClick="clearInput"
                 android:text="C" />
 
@@ -374,7 +383,7 @@
                 android:id="@+id/calculate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#9EE68B2A"
+                android:background="#26D52D"
                 android:elevation="3.0dp"
                 android:ellipsize="none"
                 android:hapticFeedbackEnabled="true"
