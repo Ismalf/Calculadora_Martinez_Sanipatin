@@ -55,15 +55,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void removeLast(View v){
-        _input = _input.substring(0,_input.length()-1);
+
+        _input = _input.length() != 0 ? _input.substring(0,_input.length()-1) : _input;
         input.setText(_input);
     }
 
     public void calculate(View v){
         _result+=_input+"\n";
+        _checkbuffer();
         result.setText(_result);
         _input = new Core().calculate(_input);
         input.setText(_input);
     }
 
+    private void _checkbuffer(){
+        String[] tmp =_result.split("\n");
+        if( tmp.length > 5 ){
+            _result = "";
+            for(int j = 1; j < tmp.length; j++){
+                _result += tmp[j] + "\n";
+            }
+        }
+    }
 }
