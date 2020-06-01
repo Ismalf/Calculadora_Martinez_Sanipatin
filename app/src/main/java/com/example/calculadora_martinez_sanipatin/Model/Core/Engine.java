@@ -1,15 +1,14 @@
-package com.example.calculadora_martinez_sanipatin.Core;
+package com.example.calculadora_martinez_sanipatin.Model.Core;
 
-import android.widget.Toast;
 import java.util.Vector;
 
-public class Core {
+public class Engine {
 
     private String[] stringInfija;
     public int error = 0;
     private float resp = 0;
 
-    public Core(){
+    public Engine(){
     }
 
     public String calculate(String input){

@@ -1,4 +1,4 @@
-package com.example.calculadora_martinez_sanipatin.Core;
+package com.example.calculadora_martinez_sanipatin.Model.Core;
 
 public class Sintactico {
     private int tipo,error;
