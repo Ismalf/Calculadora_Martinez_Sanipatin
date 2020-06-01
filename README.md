@@ -12,4 +12,4 @@ Aplicación básica de calculadora que incluye las 4 operaciones primarias: suma
 <img src="ScreenShots/Screenshot_1591042426.png" alt="alt text"  height="500px">
 
 ## Modelo de la aplicación
-El modelo de clases de la aplicación se lo puede encontrar en [ClassDiagramMVP/ClassDiagram_Martinez_Sanipatin.pdf]
+El modelo de clases de la aplicación se lo puede encontrar [aquí] (ClassDiagramMVP/ClassDiagram_Martinez_Sanipatin.pdf)
