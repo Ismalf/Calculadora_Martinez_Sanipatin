@@ -6,7 +6,7 @@ public class Engine {
 
     private String[] stringInfija;
     public int error = 0;
-    private float resp = 0;
+    private Float resp = 0.0f;
 
     public Engine(){
     }
@@ -17,11 +17,19 @@ public class Engine {
             return "Error en sintaxis";
         }else{
             PostFijo post = new PostFijo(stringInfija); // CONVERTIR CADENA INFIJA EN POSTFIJA
-            resp = post.getValor();
-            return resp +"";
+            resp =  post.getValor();
+            return removeDecimals(resp.toString());
         }
     }
-
+    private String removeDecimals(String _v){
+        String[] tmp = _v.split("\\.");
+        String _d = tmp[1];
+        int _numOfZeroes = 0;
+        for(int i = 0; i < _d.length(); i++){
+            if(_d.charAt(i) == '0') _numOfZeroes++;
+        }
+        return _numOfZeroes == _d.length() ? tmp[0] : _v;
+    }
     //CODIGOS ASCII OPERADORES
     //40 => (
     //41 => )
