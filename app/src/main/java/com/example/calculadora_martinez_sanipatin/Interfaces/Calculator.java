@@ -11,7 +11,10 @@ public interface Calculator {
         void addOperand(String operand);
         void removeOperand();
         void calculate();
-
+        void memoryAdd();
+        void memorySub();
+        void memoryRecall();
+        void memoryClear();
     }
 
     interface Presenter {
@@ -21,5 +24,9 @@ public interface Calculator {
         void calculate();
         void addOperand(String operand);
         void removeOperand();
+        void memoryAdd();
+        void memorySub();
+        void memoryRecall();
+        void memoryClear();
     }
 }

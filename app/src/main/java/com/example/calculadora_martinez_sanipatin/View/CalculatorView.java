@@ -36,6 +36,23 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         _presenter = new CalculatorPresenter(this);
     }
 
+    public void memoryOperation(View v) {
+        switch (v.getId()) {
+            case R.id.memclear:
+                _presenter.memoryClear();
+                break;
+            case R.id.memadd:
+                _presenter.memoryAdd();
+                break;
+            case R.id.memsub:
+                _presenter.memorySub();
+                break;
+            case R.id.memrecall:
+                _presenter.memoryRecall();
+                break;
+        }
+    }
+
     /**
      * Envía al presentador el valor del boton accionado en la vista
      *
@@ -142,7 +159,8 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
      * Método invocado por el presentador cuando el modelo actualiza lo que se mostrará en el historial
      * de operaciones realizadas.
      *
-     * @param buffer
+     * @param buffer historial de operaciones efectuadas recientemente, contiene un máximo de 5 líneas.
+     *               String de formato "operacion \n operacion \n"
      */
     @Override
     public void showBuffer(String buffer) {

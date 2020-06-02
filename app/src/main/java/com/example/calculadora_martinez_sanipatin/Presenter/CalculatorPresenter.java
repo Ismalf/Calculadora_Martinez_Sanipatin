@@ -30,4 +30,16 @@ public class CalculatorPresenter implements Calculator.Presenter {
 
     @Override
     public void removeOperand() { _model.removeOperand(); }
+
+    @Override
+    public void memoryAdd() { _model.memoryAdd(); }
+
+    @Override
+    public void memorySub() { _model.memorySub(); }
+
+    @Override
+    public void memoryRecall() { _model.memoryRecall(); }
+
+    @Override
+    public void memoryClear() { _model.memoryClear(); }
 }

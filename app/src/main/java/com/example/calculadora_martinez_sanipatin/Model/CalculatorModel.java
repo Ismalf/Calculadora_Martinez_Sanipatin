@@ -6,6 +6,7 @@ import com.example.calculadora_martinez_sanipatin.Interfaces.Calculator;
 public class CalculatorModel implements Calculator.Model {
 
     private Calculator.Presenter _presenter;
+    private String _memory = "";
     private String _input = "";
     private String _buffer = "";
     private Engine _engine;
@@ -38,7 +39,29 @@ public class CalculatorModel implements Calculator.Model {
         _presenter.showResult(_input);
     }
 
-    // Esto mover a una clase
+    @Override
+    public void memoryAdd() {
+        _memory = _memory == "" ? "0" : _memory;
+        _memory = _engine.calculate(_memory+"+"+_input);
+    }
+
+    @Override
+    public void memorySub() {
+        _memory = _memory == "" ? "0" : _memory;
+        _memory = _engine.calculate(_memory+"-"+_input);
+    }
+
+    @Override
+    public void memoryRecall() {
+        _input += _memory;
+        _presenter.showResult(_input);
+    }
+
+    @Override
+    public void memoryClear() {
+        _memory = "";
+    }
+
     private void _checkbuffer(){
         String[] tmp =_buffer.split("\n");
         if( tmp.length > 5 ){
