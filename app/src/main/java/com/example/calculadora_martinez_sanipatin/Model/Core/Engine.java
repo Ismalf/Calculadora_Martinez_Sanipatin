@@ -22,13 +22,18 @@ public class Engine {
         }
     }
     private String removeDecimals(String _v){
-        String[] tmp = _v.split("\\.");
-        String _d = tmp[1];
-        int _numOfZeroes = 0;
-        for(int i = 0; i < _d.length(); i++){
-            if(_d.charAt(i) == '0') _numOfZeroes++;
+        try {
+            String[] tmp = _v.split("\\.");
+            String _d = tmp[1];
+            int _numOfZeroes = 0;
+            for (int i = 0; i < _d.length(); i++) {
+                if (_d.charAt(i) == '0') _numOfZeroes++;
+            }
+            return _numOfZeroes == _d.length() ? tmp[0] : _v;
+        }catch (Exception e){
+            return _v;
         }
-        return _numOfZeroes == _d.length() ? tmp[0] : _v;
+
     }
     //CODIGOS ASCII OPERADORES
     //40 => (
