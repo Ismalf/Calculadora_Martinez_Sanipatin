@@ -2,16 +2,29 @@ package com.example.calculadora_martinez_sanipatin.Model.Core;
 
 import java.util.Vector;
 
+/**
+ * Clase que se encarga de transformar una cadena INFIJA en una cadena POSTFIJA
+ */
 public class PostFijo {
 
     private Vector<String> rpn;
     private String[] cadena;
 
+    /**
+     * Retorna una instancia de una cadena postfijo
+     * @param cadenaInfija Array de strings obtenidos de la cadena ingresada por el usuario
+     *                     para efectuar cálculos, debe ser una cadena INFFIJA correcta
+     */
     public PostFijo(String[] cadenaInfija){
         cadena = cadenaInfija;
         rpn = new Vector();
         creaPostFijo();
     }
+
+    /**
+     * Transforma la cadena provista en formato infijo, a una cadena de tipo postfijo.
+     * La cadena debe ser correcta y es provista durante la instanciación de la clase.
+     */
     private void creaPostFijo(){ // LA CADENA INFIJA DEBE ESTAR CORRECTA
         Stack pila = new Stack(cadena.length);
         int i,sim;
@@ -36,47 +49,53 @@ public class PostFijo {
         while(pila.isEmpty() == false)
             rpn.add(pila.pop());
     }
-    public String get(int index){
-        return rpn.get(index);
-    }
-    public int Size(){
-        return rpn.size();
-    }
+
+    /**
+     * Retorna verdadero o falso si el primer operador tiene una mayor jerarquía (matemática) que el segundo
+     *
+     * @param strPila primer operador
+     * @param str segundo operador
+     * @return boolean
+     */
     public boolean Precedencia(String strPila,String str){
         int p1 = getPriori(strPila);
         int p2 = getPriori(str);
         return p1 >= p2;
     }
+
+    /**
+     * Retorna un identificador del operador que se ingresa, es un número entero que indica
+     * la jerarquía matemática del operador que va desde 1 a 4. siendo 1 la jerarquía más baja y 4 la más alta
+     *
+     * @param str operador del que se requiere
+     * @return valores enteros de 1 a 4 para la jerarquía de operadores,
+     * -1 para indicar que se ha abierto una agrupación de operandos y operadores y,
+     * -2 para indicar que se ha cerrado una agrupación de operandos y operadores
+     */
     private static int getPriori(String str){
-        int i=0;
-        if(str.equals("-"))
-            i = 1;
-        if(str.equals("+"))
-            i = 1;
-        if(str.equals("*"))
-            i = 2;
-        if(str.equals("/"))
-            i = 2;
-        if(str.equals("^"))
-            i = 3;
-        if(str.equals("√"))
-            i = 3;
-        if(str.equals("!"))
-            i = 4;
-        if(str.equals("("))
-            i = -1;
-        if(str.equals("["))
-            i = -1;
-        if(str.equals("{"))
-            i = -1;
-        if(str.equals(")"))
-            i = -2;
-        if(str.equals("]"))
-            i = -2;
-        if(str.equals("}"))
-            i = -2;
-        return i;
+        switch(str){
+            case "-": return 1;
+            case "+": return 1;
+            case "*": return 2;
+            case "/": return 2;
+            case "^": return 3;
+            case "√": return 3;
+            case "!": return 4;
+            case "(": return -1;
+            case "[": return -1;
+            case "{": return -1;
+            case ")": return -2;
+            case "]": return -2;
+            case "}": return -2;
+            default: return 0;
+        }
     }
+
+    /**
+     * Retorna el valor calculado usando la cadena post fija que se crea al momento
+     * de instanciar el objeto
+     * @return float: número decimal resultante de efectuar las operaciones marcadas en
+     */
     public float getValor(){
         Stack pila = new Stack(cadena.length);
         String s,valor;
@@ -108,27 +127,36 @@ public class PostFijo {
         }
         return Float.valueOf(pila.pop());
     }
+
+    /**
+     * Se efectuan las operaciones matemáticas denotadas por el operador sobre los operandos.
+     * Las operaciones se realizan en orden izquirda a derecha, así el order de los operandos
+     * marca una diferencia a excepción de que el operador marque una suma.
+     * @param str operador
+     * @param op1 primer operando
+     * @param op2 segundo operando
+     * @return una cadena con el resultado de las operaciones matemáticas efectuadas sobre los datos
+     * de ingreso
+     */
     private static String operar(String str, float op1, float op2){
         float valor = 0;
-        if(str.equals("+"))
-            valor = op1 + op2;
-        if(str.equals("-"))
-            valor = op1 - op2;
-        if(str.equals("*"))
-            valor = op1*op2;
-        if(str.equals("/")){
-            //if(op2 != 0)
-            valor = op1 / op2;
-            //else
-            //xerror++;
+        switch(str){
+            case "+": valor = op1 + op2; break;
+            case "-": valor = op1 - op2; break;
+            case "*": valor = op1 * op2; break;
+            case "/": valor = op1 / op2; break;
+            case "^": valor = (float) Math.pow(op1,op2); break;
+            case "√": valor = (float) Math.pow(op2, 1/op1); break;
         }
-        if(str.equals("^"))
-            valor = (float) Math.pow(op1,op2);
-        if(str.equals("√"))
-            valor = (float) Math.pow(op2, 1/op1);
         return String.valueOf(valor);
     }
 
+    /**
+     * Se calcula el factorial de un número dado
+     * @param num número del cual se quiere calcular el factorial, debe ser un entero mayor a 0
+     * @return el valor calculado del factorial del número ingresado, 1 en caso de que el valor ingresado
+     * sea menor o igual a 0
+     */
     private static float factorial(int num){
         float x = 1;
         int i;
