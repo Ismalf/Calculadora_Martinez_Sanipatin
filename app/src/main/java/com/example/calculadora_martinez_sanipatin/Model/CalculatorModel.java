@@ -74,6 +74,7 @@ public class CalculatorModel implements Calculator.Model {
      */
     @Override
     public void memoryAdd() {
+        if(_input == "") return;
         _memory = _memory == "" ? "0" : _memory;
         _memory = _engine.calculate(_memory+"+"+_input);
     }
@@ -84,8 +85,7 @@ public class CalculatorModel implements Calculator.Model {
      */
     @Override
     public void memorySub() {
-        _memory = _memory == "" ? "0" : _memory;
-        _memory = _engine.calculate(_memory+"-"+_input);
+        if(!_memory.equals("") && _input != "") _memory = _engine.calculate(_memory+"-"+_input);
     }
 
     /**
