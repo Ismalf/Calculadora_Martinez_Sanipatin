@@ -1,8 +1,6 @@
 package com.example.calculadora_martinez_sanipatin.Model.Core;
 
 /**
- * Clase Sintactico
- *
  * Clase encargada de implementar metodos que verifiquen que la cadena
  * ingresada por el usuario sea correcta.
  *
@@ -11,7 +9,7 @@ package com.example.calculadora_martinez_sanipatin.Model.Core;
  */
 public class Sintactico {
     /**
-     * Atributos de tipo int para almacenar el tipo de caracter y el número de errores en la cadena ingresada,
+     * Atributos de tipo int para almacenar el tipo de caracter y el numero de errores en la cadena ingresada,
      * y un Atributo pila de tipo Stack el cual nos permite ingresar a sus métodos.
      */
     private int tipo,error;
@@ -28,9 +26,8 @@ public class Sintactico {
     }
 
     /**
-     * Método add()
-     * Este método verifica que la cadena ingresada este correctamente estructurada.
-     * @param c parametro de tipo char correspondiente a cada carecter de la cadena ingresada.
+     * Este metodo verifica que la cadena ingresada este correctamente estructurada.
+     * @param c parametro de tipo char correspondiente a cada carecter de la pila.
      */
     public void add(char c){
         String s = String.valueOf(c);
@@ -51,7 +48,7 @@ public class Sintactico {
     }
 
     /**
-     * Se determina si la pila está vacía, esto se puede determinar mediante el tope de la pila,
+     * Se determina si la pila está vacía, y se lo hace mediante el tope de la pila,
      * el cual es -1 si la cadena ingresada está vacía.
      * @return retorna un tipo de dato booleano true o false
      */
@@ -60,9 +57,8 @@ public class Sintactico {
     }
 
     /**
-     * Método setType()
-     * Este método verifica que tipo de numero se ha ingresado
-     * @param xtipo parametro correspondiente a un número de la cadena.
+     * Este metodo verifica que tipo de numero se ha ingresado
+     * @param xtipo parametro correspondiente a un numero de la pila.
      */
     public void setType(int xtipo){
         if(tipo == 1){
@@ -78,7 +74,7 @@ public class Sintactico {
 
     /**
      * Getter del atributo error
-     * @return retorna el número de erores
+     * @return retorna el número de errores
      */
     public int getError(){
         return error;

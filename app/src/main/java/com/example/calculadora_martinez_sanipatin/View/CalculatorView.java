@@ -11,8 +11,6 @@ import com.example.calculadora_martinez_sanipatin.Presenter.CalculatorPresenter;
 import com.example.calculadora_martinez_sanipatin.R;
 
 /**
- * Clase CalculatorView
- *
  * Clase encargada de manejar la vista de la calculadora,
  * tiene una conexión con el presentador, estableciendo así, el patrón MVP
  *
@@ -71,8 +69,7 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     //endregion
 
     /**
-     * Método onCreate()
-     * Este método se implementa junto con la creación del proyecto.
+     * Este metodo se implementa junto con la creación del proyecto.
      * @param savedInstanceState
      */
     @Override
@@ -87,7 +84,7 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
 
     //region methods
     /**
-     * Método de inicialización para vincular los botones con el evento click para accionar las
+     * Metodo de inicialización para vincular los botones con el evento click para accionar las
      * funciones respectivas del presentador
      */
     private void _init(){
@@ -118,9 +115,8 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     }
 
     /**
-     * Método memoryOperation()
-     * Este método permite gestionar el funcionamiento de los valores en memoria.
-     * @param v
+     * Este metodo permite gestionar el funcionamiento de los valores en memoria.
+     * @param v instancia de la vista
      */
     public void memoryOperation(View v) {
         switch (v.getId()) {
@@ -212,7 +208,7 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     }
 
     /**
-     * Se indica al presentador que se debe eliminar el último caracter de la cadena del input del
+     * Se indica al presentador que se debe eliminar el ultimo caracter de la cadena del input del
      * motor, ofreciendo al usuario la posibilidad de corregir un valor mal ingresado.
      *
      * @param v
@@ -222,7 +218,7 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     }
 
     /**
-     * Se indica al presentador que se debe efectuar el cálculo de lo ingresado por el usuario.
+     * Se indica al presentador que se debe efectuar el calculo de lo ingresado por el usuario.
      *
      * @param v
      */
@@ -231,8 +227,8 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     }
 
     /**
-     * Método invocado por el presentador cuando el modelo indica un cambio en el resulado de la
-     * operación ingresada.
+     * Metodo invocado por el presentador cuando el modelo indica un cambio en el resulado de la
+     * operacion ingresada.
      *
      * @param result valor enviado desde el presentador, es el resultado de una operación
      */
@@ -242,10 +238,10 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     }
 
     /**
-     * Método invocado por el presentador cuando el modelo actualiza lo que se mostrará en el historial
+     * Metodo invocado por el presentador cuando el modelo actualiza lo que se mostrara en el historial
      * de operaciones realizadas.
      *
-     * @param buffer historial de operaciones efectuadas recientemente, contiene un máximo de 5 líneas.
+     * @param buffer historial de operaciones efectuadas recientemente, contiene un maximo de 5 lineas.
      *               String de formato "operacion \n operacion \n"
      */
     @Override

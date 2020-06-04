@@ -4,9 +4,7 @@ import com.example.calculadora_martinez_sanipatin.Model.Core.Engine;
 import com.example.calculadora_martinez_sanipatin.Interfaces.Calculator;
 
 /**
- * Clase CalculatorModel
- *
- * En esta Clase encontramos la lógica de Negocio o Casos de Uso de la Calculadora,
+ * En esta Clase encontramos la logica de Negocio o Casos de Uso de la Calculadora,
  * esta se conecta con la Clase CalculatorPresenter, e implementa la interfaz Calculator.Model.
  *
  * @author Ismael Martinez - Kevin Sanipatin
@@ -14,7 +12,7 @@ import com.example.calculadora_martinez_sanipatin.Interfaces.Calculator;
  */
 public class CalculatorModel implements Calculator.Model {
     /**
-     * Declaración de la Interfaz del Presentador,
+     * Declaracion de la Interfaz del Presentador,
      * Campos de la clase de tipo String y,
      * un atributo de tipo Engine.
      */
@@ -25,9 +23,8 @@ public class CalculatorModel implements Calculator.Model {
     private Engine _engine;
 
     /**
-     * Constructor de la Clase CalculatorModel
      * Este constructor es invocado en el Constructor del CalculatorPresenter,
-     * para poder acceder a sus métodos.
+     * para poder acceder a sus metodos.
      * @param presenter parametro de tipo CalculatorPresenter.
      */
     public CalculatorModel(Calculator.Presenter presenter){
@@ -38,8 +35,7 @@ public class CalculatorModel implements Calculator.Model {
     }
 
     /**
-     * Método addOperand()
-     * Este método añade un dígito u operando a la cadena ingresada por el usuario
+     * Este metodo añade un digito u operando a la cadena ingresada por el usuario
      * @param operand parametro de tipo String que viene del Presentador
      */
     @Override
@@ -49,8 +45,7 @@ public class CalculatorModel implements Calculator.Model {
     }
 
     /**
-     * Método removeOperand()
-     * Este método borra el último dígito u operando ingresado por el usuario.
+     * Este metodo borra el ultimo digito u operando ingresado por el usuario.
      */
     @Override
     public void removeOperand() {
@@ -59,11 +54,10 @@ public class CalculatorModel implements Calculator.Model {
     }
 
     /**
-     * Método calculate()
-     * Este método primero verifica si no hay algún dato en memoria para adicionarlo al dato de entrada,
-     * luego se invoca al método checkbuffer para agregar al buffer las operaciones ingresadas,
-     * Seguidamente se llama a un método de la Clase Engine para calcular el resultado, y
-     * Finalmente se procede a invocar al método showResult(_input) del Presentador enviandole como parametro el resultado.
+     * Este metodo primero verifica si no hay algun dato en memoria para adicionarlo al dato de entrada,
+     * luego se invoca al metodo checkbuffer para agregar al buffer las operaciones ingresadas,
+     * Seguidamente se llama a un metodo de la Clase Engine para calcular el resultado, y
+     * Finalmente se procede a invocar al metodo showResult(_input) del Presentador enviandole como parametro el resultado.
      */
     @Override
     public void calculate() {
@@ -75,8 +69,7 @@ public class CalculatorModel implements Calculator.Model {
     }
 
     /**
-     * Método memoryAdd()
-     * Este método adiciona cierto valor igresado al valor guardado en memoria si lo hubiere,
+     * Este metodo adiciona cierto valor igresado al valor guardado en memoria si lo hubiere,
      * caso contratio almacena en memoria.
      */
     @Override
@@ -86,8 +79,7 @@ public class CalculatorModel implements Calculator.Model {
     }
 
     /**
-     * Método memorySub()
-     * Este método substrae cierto valor ingreso al valor guardado en memoria si lo hubiere,
+     * Este metodo substrae cierto valor ingreso al valor guardado en memoria si lo hubiere,
      * caso contrario lo almacena en memoria.
      */
     @Override
@@ -97,8 +89,7 @@ public class CalculatorModel implements Calculator.Model {
     }
 
     /**
-     * Método memoryRecall()
-     * Este método adiciona al valor almacenado en memoria un valor ingresado por el usuario.
+     * Este metodo adiciona al valor almacenado en memoria un valor ingresado por el usuario.
      */
     @Override
     public void memoryRecall() {
@@ -107,8 +98,7 @@ public class CalculatorModel implements Calculator.Model {
     }
 
     /**
-     * Método memoryClear()
-     * Este método elimina cualquier valor almacenado en memoria.
+     * Este metodo elimina cualquier valor almacenado en memoria.
      */
     @Override
     public void memoryClear() {
@@ -116,9 +106,8 @@ public class CalculatorModel implements Calculator.Model {
     }
 
     /**
-     * Método _checkbuffer()
-     * Este método almacena las operaciones ingresadas por el usuario,
-     * creando un registro a manera de historial de cada operación o
+     * Este metodo almacena las operaciones ingresadas por el usuario,
+     * creando un registro a manera de historial de cada operacion o
      * conjunto de operaciones.
      */
     private void _checkbuffer(){

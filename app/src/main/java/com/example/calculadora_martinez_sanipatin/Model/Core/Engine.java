@@ -3,8 +3,6 @@ package com.example.calculadora_martinez_sanipatin.Model.Core;
 import java.util.Vector;
 
 /**
- * Clase Engine
- *
  * Clase encargada de implementar metodos para calcular el resultado
  * de las operaciones ingresadas por el usuario.
  *
@@ -14,7 +12,7 @@ import java.util.Vector;
 public class Engine {
     /**
      * Atributos de tipo String, int y float, utilizados en la clase
-     * para almacenar algún valor.
+     * para almacenar algun valor.
      */
     private String[] stringInfija;
     public int error = 0;
@@ -27,10 +25,9 @@ public class Engine {
     }
 
     /**
-     * Método calculate()
-     * Este método retorna el resultado de la cadena de operaciones ingresada por el usuario
+     * Este metodo retorna el resultado de la cadena de operaciones ingresada por el usuario
      * @param input parametro de tipo String ingresado por el usuario
-     * @return
+     * @return retorna un String del resultado obtenido.
      */
     public String calculate(String input){
         getStrInfija(input);
@@ -44,11 +41,10 @@ public class Engine {
     }
 
     /**
-     * Método removeDecimals()
-     * Este método retira los los ceros de un resultado con con decimales innecesarios,
+     * Este metodo retira los los ceros de un resultado con con decimales innecesarios,
      * por ejemplo de un resultado: 4.0 el método retorna: 4 entero.
      * @param _v parametro correspondiente al resultado obtenido de las operaciones.
-     * @return regresa un valor sin decimales cuando todos estos son cero, ó el resultado original
+     * @return regresa un valor sin decimales cuando todos estos son cero, o el resultado original
      * en caso de que los decimales sean diferentes de 0 ó sea INFINITY / ERROR
      */
     private String removeDecimals(String _v){
@@ -75,9 +71,8 @@ public class Engine {
     //47 => /
 
     /**
-     * Método getStringInfija()
-     * Este método verifica que la cadena ingresada por el usuario,
-     * tengan relación de operabilidad entre números, es decir 5 + 3 * 2
+     * Este metodo verifica que la cadena ingresada por el usuario,
+     * tengan relacion de operabilidad entre numeros, es decir 5 + 3 * 2
      * @param str parametro correspondiente a la cadena ingresada por el usuario.
      */
     public void getStrInfija(String str){

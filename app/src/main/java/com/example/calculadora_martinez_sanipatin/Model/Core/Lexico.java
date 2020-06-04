@@ -1,9 +1,7 @@
 package com.example.calculadora_martinez_sanipatin.Model.Core;
 
 /**
- * Clase Lexico
- *
- * Clase encargada de implementar métodos que verifiquen que la cadena
+ * Clase encargada de implementar metodos que verifiquen que la cadena
  * ingresada tenga operandos y operadores de manera correcta.
  *
  * @author Ismael Martinez - Kevin Sanipatin
@@ -11,7 +9,7 @@ package com.example.calculadora_martinez_sanipatin.Model.Core;
  */
 public class Lexico {
     /**
-     * Atributos de tipo entero que almacenan el tipo y el error identificado
+     * Atributos de tipo entero que almacenan el tipo de caracter y el numero de errores identificados
      * en la cadena ingresada.
      */
     private int tipo,error;
@@ -25,8 +23,7 @@ public class Lexico {
     }
 
     /**
-     * Método add()
-     * Este método invoca al método getType() que retorna un número que corresponde al tipo de caracter,
+     * Llama al metodo getType() el cual retorna un numero que corresponde al tipo de caracter,
      * y de esa manera determinar si es un error o no.
      * @param x parametro de tipo char correspondiente a cada carecter de la cadena ingresada.
      */
@@ -37,10 +34,10 @@ public class Lexico {
     }
 
     /**
-     * Getter del atributo tipo, retorna un entero generado por el metodo getTyper, que
-     * corresponde al tipo de caracter al que sea.
+     * Retorna un entero generado por el metodo getType(), el cual
+     * corresponde al tipo de caracter.
      * @param c parametro de tipo char correspondiente a cada carecter de la cadena ingresada.
-     * @return
+     * @return retorna un entero que hace referencia al tipo de caracter de la cadena.
      */
     public int getTipo(char c){
         return getType(c);
@@ -55,8 +52,7 @@ public class Lexico {
     }
 
     /**
-     * Método estático getType()
-     * Este método verifica que tipo de caracter es el que se ha ingresado.
+     * Este metodo estatico verifica que tipo de caracter es el que se ha ingresado.
      * @param x parametro de tipo char correspondiente a cada carecter de la cadena ingresada.
      * @return retorna el tipo de caracter es.
      */
@@ -85,7 +81,7 @@ public class Lexico {
             case '*': i = 4; break;
             case '/': i = 4; break;
             case '^': i = 4; break;
-            case '√': i = 4; break;
+            //case '√': i = 4; break;
             case '!': i = 5; break;
         }
         return i;

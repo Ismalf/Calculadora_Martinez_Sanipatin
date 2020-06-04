@@ -3,15 +3,15 @@ package com.example.calculadora_martinez_sanipatin.Model.Core;
 import java.util.Vector;
 
 /**
- * Clase PostFijo
- *
- * Clase que se encarga de transformar una cadena INFIJA en una cadena POSTFIJA
+ * Clase encargada de transformar una cadena INFIJA en una cadena POSTFIJA
  *
  * @author Ismael Martinez - Kevin Sanipatin
  * @version 02/06/2020 v1
  */
 public class PostFijo {
-
+    /**
+     * Atributos del la clase PostFijo
+     */
     private Vector<String> rpn;
     private String[] cadena;
 
