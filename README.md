@@ -50,7 +50,7 @@ A continuación se muestran los resultados de las pruebas unitarias
 <img src="TestResults/TestResults-EngineTest.png" alt="pruebas unitarias" height="500px">
 
 ## Autores
- - Ismaes Martinez - Desarrollo de Software y Documentación - aimartinez1@espe.edu.ec
+ - Ismael Martínez - Desarrollo de Software y Documentación - iamartinez1@espe.edu.ec
  - Kevin Sanipatin - Desarrollo de Software y Documentación - kisanipatin@espe.edu.ec
 
 
