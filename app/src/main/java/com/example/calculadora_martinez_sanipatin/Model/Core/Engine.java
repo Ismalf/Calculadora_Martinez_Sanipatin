@@ -48,7 +48,8 @@ public class Engine {
      * Este método retira los los ceros de un resultado con con decimales innecesarios,
      * por ejemplo de un resultado: 4.0 el método retorna: 4 entero.
      * @param _v parametro correspondiente al resultado obtenido de las operaciones.
-     * @return
+     * @return regresa un valor sin decimales cuando todos estos son cero, ó el resultado original
+     * en caso de que los decimales sean diferentes de 0 ó sea INFINITY / ERROR
      */
     private String removeDecimals(String _v){
         try {
@@ -82,8 +83,8 @@ public class Engine {
     public void getStrInfija(String str){
         Vector<String> cadenaInfija = new Vector();
 
-        Sintactico asin = new Sintactico(str.length());
-        Lexico alex = new Lexico();
+        Sintactico sintactico = new Sintactico(str.length());
+        Lexico lex = new Lexico();
 
         error = 0;
         //if(str.length() == 0)
@@ -101,7 +102,7 @@ public class Engine {
             c = str.charAt(i);
             if( c != ' '){
                 j = 1;
-                tipo = alex.getTipo(c); //Tipo es un entero que con el que indica un caracter
+                tipo = lex.getTipo(c); //Tipo es un entero que con el que indica un caracter
                 if( (atipo == 0 && tipo == 2) || (atipo == 3 && tipo == 0) || (atipo == 3 && tipo == 2)){
                     c = '*';  //Agrega operador '*' en expresiones
                     j = 0;    ///   x * (..      )*[        (...)*999
@@ -112,11 +113,11 @@ public class Engine {
                     j = 0;
                     tipo = 0;
                 }
-                alex.add(c);
-                asin.setType(tipo);
-                asin.add(c);
+                lex.add(c);
+                sintactico.setType(tipo);
+                sintactico.add(c);
 
-                error = error + alex.getError() + asin.getError();
+                error = error + lex.getError() + sintactico.getError();
 
                 if(error == 0){
                     if( tipo < 2){ //Es número
@@ -141,7 +142,7 @@ public class Engine {
             }
             i = i + j;
         }
-        if(asin.isEmpty() == false)
+        if(sintactico.isEmpty() == false)
             error++; //Si no están bien emperajados los paréntesis
         if(num.equals("") == false){ // Si la cadena "num" tiene un número
             try{

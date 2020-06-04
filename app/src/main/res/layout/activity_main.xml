@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MC"
-                android:onClick="memoryOperation"
+
                 android:background="#00FFFFFF" />
             <Space
                 android:layout_width="wrap_content"
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="M+"
-                android:onClick="memoryOperation"
+
                 android:background="#00FFFFFF"/>
             <Space
                 android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="M-"
-                android:onClick="memoryOperation"
+
                 android:background="#00FFFFFF"/>
             <Space
                 android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MR"
-                android:onClick="memoryOperation"
+
                 android:background="#00FFFFFF"/>
             <Space
                 android:layout_width="wrap_content"
@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="(" />
 
             <Space
@@ -148,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text=")" />
 
             <Space
@@ -165,7 +165,7 @@
                 android:elevation="3.0dp"
                 android:ellipsize="none"
                 android:hapticFeedbackEnabled="true"
-                android:onClick="removeLast"
+
                 android:text="DEL" />
 
             <Space
@@ -178,7 +178,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="/" />
 
             <Space
@@ -203,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="1" />
 
             <Space
@@ -216,7 +216,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="2" />
 
             <Space
@@ -229,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="3" />
 
             <Space
@@ -242,14 +242,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="*" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="addToInput" />
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -268,7 +268,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="4" />
 
             <Space
@@ -281,7 +281,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="5" />
 
             <Space
@@ -294,7 +294,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="6" />
 
             <Space
@@ -307,7 +307,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="+" />
 
             <Space
@@ -332,7 +332,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="7" />
 
             <Space
@@ -345,7 +345,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="8" />
 
             <Space
@@ -358,7 +358,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="9" />
 
             <Space
@@ -371,7 +371,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="-" />
 
             <Space
@@ -396,7 +396,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#14F44336"
-                android:onClick="clearInput"
+
                 android:text="C" />
 
             <Space
@@ -409,7 +409,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="0" />
 
             <Space
@@ -422,7 +422,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:onClick="addToInput"
+
                 android:text="." />
 
             <Space
@@ -438,7 +438,7 @@
                 android:elevation="3.0dp"
                 android:ellipsize="none"
                 android:hapticFeedbackEnabled="true"
-                android:onClick="calculate"
+
                 android:text="=" />
 
             <Space

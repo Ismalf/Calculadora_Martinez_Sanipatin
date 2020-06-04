@@ -20,6 +20,7 @@ import com.example.calculadora_martinez_sanipatin.R;
  * @version 02/06/2020 v1
  */
 public class CalculatorView extends AppCompatActivity implements Calculator.View {
+    //region attributes
     /**
      * Variable que servirá para almacenar una referencia al campo de texto en el que se mostrará
      * un historial de las operaciones realizadas
@@ -30,7 +31,44 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
      * los datos ingresados para efectuar una operación matemática
      */
     private TextView _input;
+
     private Calculator.Presenter _presenter;
+
+    private View.OnClickListener addInput = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            addToInput(v);
+        }
+    };
+
+    private View.OnClickListener memOp = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            memoryOperation(v);
+        }
+    };
+
+    private View.OnClickListener backspace = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            removeLast(v);
+        }
+    };
+
+    private View.OnClickListener clear = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            clearInput(v);
+        }
+    };
+
+    private View.OnClickListener calc = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            calculate(v);
+        }
+    };
+    //endregion
 
     /**
      * Método onCreate()
@@ -44,6 +82,39 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         _input = findViewById(R.id.input);
         _resultsBuffer = findViewById(R.id.results);
         _presenter = new CalculatorPresenter(this);
+        _init();
+    }
+
+    //region methods
+    /**
+     * Método de inicialización para vincular los botones con el evento click para accionar las
+     * funciones respectivas del presentador
+     */
+    private void _init(){
+        findViewById(R.id.number0).setOnClickListener(addInput);
+        findViewById(R.id.number1).setOnClickListener(addInput);
+        findViewById(R.id.number2).setOnClickListener(addInput);
+        findViewById(R.id.number3).setOnClickListener(addInput);
+        findViewById(R.id.number4).setOnClickListener(addInput);
+        findViewById(R.id.number5).setOnClickListener(addInput);
+        findViewById(R.id.number6).setOnClickListener(addInput);
+        findViewById(R.id.number7).setOnClickListener(addInput);
+        findViewById(R.id.number8).setOnClickListener(addInput);
+        findViewById(R.id.number9).setOnClickListener(addInput);
+        findViewById(R.id.parenthesisopen).setOnClickListener(addInput);
+        findViewById(R.id.parenthesisclose).setOnClickListener(addInput);
+        findViewById(R.id.decimal).setOnClickListener(addInput);
+        findViewById(R.id.divide).setOnClickListener(addInput);
+        findViewById(R.id.multi).setOnClickListener(addInput);
+        findViewById(R.id.addition).setOnClickListener(addInput);
+        findViewById(R.id.substract).setOnClickListener(addInput);
+        findViewById(R.id.memadd).setOnClickListener(memOp);
+        findViewById(R.id.memclear).setOnClickListener(memOp);
+        findViewById(R.id.memrecall).setOnClickListener(memOp);
+        findViewById(R.id.memsub).setOnClickListener(memOp);
+        findViewById(R.id.backspace).setOnClickListener(backspace);
+        findViewById(R.id.clear).setOnClickListener(clear);
+        findViewById(R.id.calculate).setOnClickListener(calc);
     }
 
     /**
@@ -181,4 +252,5 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     public void showBuffer(String buffer) {
         _resultsBuffer.setText(buffer);
     }
+    //endregion
 }
