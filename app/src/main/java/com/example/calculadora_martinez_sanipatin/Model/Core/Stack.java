@@ -1,10 +1,14 @@
 package com.example.calculadora_martinez_sanipatin.Model.Core;
 
 /**
+ * Clase Stack
+ *
  * Estructura de datos de pila para poder organizar los elementos ingresados por el usuario,
  * con la finalidad de armar una cadena postfija, usada en el método polaco inverso para la
  * calculadora.
  *
+ * @author Ismael Martinez - Kevin Sanipatin
+ * @version 02/06/2020 v1
  */
 public class Stack {
     /**

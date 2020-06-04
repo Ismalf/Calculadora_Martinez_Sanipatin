@@ -2,15 +2,36 @@ package com.example.calculadora_martinez_sanipatin.Model.Core;
 
 import java.util.Vector;
 
+/**
+ * Clase Engine
+ *
+ * Clase encargada de implementar metodos para calcular el resultado
+ * de las operaciones ingresadas por el usuario.
+ *
+ * @author Ismael Martinez - Kevin Sanipatin
+ * @version 02/06/2020 v1
+ */
 public class Engine {
-
+    /**
+     * Atributos de tipo String, int y float, utilizados en la clase
+     * para almacenar algún valor.
+     */
     private String[] stringInfija;
     public int error = 0;
     private Float resp = 0.0f;
 
+    /**
+     * Constructor de la Clase Engine
+     */
     public Engine(){
     }
 
+    /**
+     * Método calculate()
+     * Este método retorna el resultado de la cadena de operaciones ingresada por el usuario
+     * @param input parametro de tipo String ingresado por el usuario
+     * @return
+     */
     public String calculate(String input){
         getStrInfija(input);
         if(error > 0){
@@ -21,6 +42,14 @@ public class Engine {
             return removeDecimals(resp.toString());
         }
     }
+
+    /**
+     * Método removeDecimals()
+     * Este método retira los los ceros de un resultado con con decimales innecesarios,
+     * por ejemplo de un resultado: 4.0 el método retorna: 4 entero.
+     * @param _v parametro correspondiente al resultado obtenido de las operaciones.
+     * @return
+     */
     private String removeDecimals(String _v){
         try {
             String[] tmp = _v.split("\\.");
@@ -44,6 +73,12 @@ public class Engine {
     //46 => .
     //47 => /
 
+    /**
+     * Método getStringInfija()
+     * Este método verifica que la cadena ingresada por el usuario,
+     * tengan relación de operabilidad entre números, es decir 5 + 3 * 2
+     * @param str parametro correspondiente a la cadena ingresada por el usuario.
+     */
     public void getStrInfija(String str){
         Vector<String> cadenaInfija = new Vector();
 

@@ -11,8 +11,13 @@ import com.example.calculadora_martinez_sanipatin.Presenter.CalculatorPresenter;
 import com.example.calculadora_martinez_sanipatin.R;
 
 /**
+ * Clase CalculatorView
+ *
  * Clase encargada de manejar la vista de la calculadora,
  * tiene una conexión con el presentador, estableciendo así, el patrón MVP
+ *
+ * @author Ismael Martinez - Kevin Sanipatin
+ * @version 02/06/2020 v1
  */
 public class CalculatorView extends AppCompatActivity implements Calculator.View {
     /**
@@ -27,6 +32,11 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     private TextView _input;
     private Calculator.Presenter _presenter;
 
+    /**
+     * Método onCreate()
+     * Este método se implementa junto con la creación del proyecto.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +46,11 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         _presenter = new CalculatorPresenter(this);
     }
 
+    /**
+     * Método memoryOperation()
+     * Este método permite gestionar el funcionamiento de los valores en memoria.
+     * @param v
+     */
     public void memoryOperation(View v) {
         switch (v.getId()) {
             case R.id.memclear:
