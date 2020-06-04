@@ -20,11 +20,16 @@ Aplicación básica de calculadora que incluye las 4 operaciones primarias: suma
 ## Modelo de la aplicación
 El modelo de clases de la aplicación se lo puede encontrar [aquí](ClassDiagramMVP/DiagramClassMVP_Martinez_Sanipatin.pdf)
 
-## Pruebas unitarias
-A continuación se muestran los resultados de las pruebas unitarias
-<img src="TestResults/TestResults-EngineTest.png" alt="pruebas unitarias" >
-
 ## Documentación
 La Documentación del código se la puede encontrar [aquí](Javadoc/index.html)
 <img src="ScreenShots/JavadocHTML.JPG" alt="Operaciones complejas"  height="500px">
+
+## Pruebas unitarias
+A continuación se muestran los resultados de las pruebas unitarias
+<img src="TestResults/TestResults-EngineTest.png" alt="pruebas unitarias" height="500px">
+
+## Autores
+ - Ismaes Martinez - Desarrollo de Software y Documentación - aimartinez@esoe.edu.ec
+ - Kevin Sanipatin - Desarrollo de Software y Documentación - kisanipatin@espe.edu.ec
+
 
