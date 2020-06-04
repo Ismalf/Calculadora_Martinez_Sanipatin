@@ -29,30 +29,42 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
      * los datos ingresados para efectuar una operación matemática
      */
     private TextView _input;
-
+    /**
+     * Instancia de un Objeto de tipo Calculator.Presenter para poder acceder a sus metodos.
+     */
     private Calculator.Presenter _presenter;
 
+    /**
+     * Evento que llama a un metodo cuando se da Click en algun operando u operacion.
+     */
     private View.OnClickListener addInput = new View.OnClickListener(){
         @Override
         public void onClick(View v){
             addToInput(v);
         }
     };
-
+    /**
+     * Evento que llama un metodo cuando se da Click en uno de los botones
+     * de gestion de memoria (MC, M+, M-, MR).
+     */
     private View.OnClickListener memOp = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             memoryOperation(v);
         }
     };
-
+    /**
+     * Evento que llama a un metodo cuando se da Click en el boton "DEL"
+     */
     private View.OnClickListener backspace = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             removeLast(v);
         }
     };
-
+    /**
+     * Evento que llama a un metodo cuando se da Click en el boton "C".
+     */
     private View.OnClickListener clear = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -60,6 +72,9 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         }
     };
 
+    /**
+     * Evento que llama a un metodo cuando se da Click en el boton "="
+     */
     private View.OnClickListener calc = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
