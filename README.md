@@ -13,3 +13,6 @@ Aplicación básica de calculadora que incluye las 4 operaciones primarias: suma
 
 ## Modelo de la aplicación
 El modelo de clases de la aplicación se lo puede encontrar [aquí](ClassDiagramMVP/ClassDiagram_Martinez_Sanipatin.pdf)
+
+## Pruebas unitarias
+Los resultados de las pruebas unitarias realizadas sobre el motor de cálculo de la app se los puede encontrar [aquí](TestResults/TestResults-EngineTest.html)
