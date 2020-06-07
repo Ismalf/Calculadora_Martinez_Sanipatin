@@ -17,6 +17,12 @@ Aplicación básica de calculadora que incluye las 4 operaciones primarias: suma
 ### División por Cero
 <img src="ScreenShots/5.jpg" alt="División por Cero"  height="500px">
 
+### Potencia de un Número
+<img src="ScreenShots/pot1.jpg" alt="Potencia"  height="500px">
+
+### Factorial de un Número
+<img src="ScreenShots/fact1.jpg" alt="Factorial"  height="500px">
+
 ## Modelo de la aplicación
 El modelo de clases de la aplicación se lo puede encontrar [aquí](ClassDiagramMVP/DiagramClassMVP_Martinez_Sanipatin.pdf)
 
