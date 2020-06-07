@@ -84,23 +84,21 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
             <Button
-                android:id="@+id/memadd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="M+"
+                android:text=""
 
                 android:background="#00FFFFFF"/>
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
-                android:id="@+id/memsub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="M-"
 
-                android:background="#00FFFFFF"/>
+                android:background="#00FFFFFF" />
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -181,6 +179,62 @@
 
                 android:text="/" />
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/memadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M+"
+
+                android:background="#00FFFFFF"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/memsub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M-"
+
+                android:background="#00FFFFFF"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/factorial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="!"
+
+                android:background="#00FFFFFF"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/potencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="^"
+
+                android:background="#00FFFFFF"/>
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

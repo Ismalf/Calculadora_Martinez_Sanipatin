@@ -127,6 +127,8 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         findViewById(R.id.backspace).setOnClickListener(backspace);
         findViewById(R.id.clear).setOnClickListener(clear);
         findViewById(R.id.calculate).setOnClickListener(calc);
+        findViewById(R.id.factorial).setOnClickListener(addInput);
+        findViewById(R.id.potencia).setOnClickListener(addInput);
     }
 
     /**
@@ -207,6 +209,12 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
                 break;
             case (R.id.multi):
                 _presenter.addOperand("*");
+                break;
+            case (R.id.factorial):
+                _presenter.addOperand("!");
+                break;
+            case (R.id.potencia):
+                _presenter.addOperand("^");
                 break;
         }
     }
