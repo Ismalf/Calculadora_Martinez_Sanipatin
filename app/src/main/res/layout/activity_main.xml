@@ -83,12 +83,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
+                android:id="@+id/mod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
 
-                android:background="#00FFFFFF"/>
+                android:background="#00FFFFFF"
+                android:text="%" />
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

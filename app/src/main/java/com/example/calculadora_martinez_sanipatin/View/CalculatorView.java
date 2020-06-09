@@ -37,9 +37,9 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     /**
      * Evento que llama a un metodo cuando se da Click en algun operando u operacion.
      */
-    private View.OnClickListener addInput = new View.OnClickListener(){
+    private View.OnClickListener addInput = new View.OnClickListener() {
         @Override
-        public void onClick(View v){
+        public void onClick(View v) {
             addToInput(v);
         }
     };
@@ -85,6 +85,7 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
 
     /**
      * Este metodo se implementa junto con la creación del proyecto.
+     *
      * @param savedInstanceState
      */
     @Override
@@ -98,11 +99,12 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
     }
 
     //region methods
+
     /**
      * Metodo de inicialización para vincular los botones con el evento click para accionar las
      * funciones respectivas del presentador
      */
-    private void _init(){
+    private void _init() {
         findViewById(R.id.number0).setOnClickListener(addInput);
         findViewById(R.id.number1).setOnClickListener(addInput);
         findViewById(R.id.number2).setOnClickListener(addInput);
@@ -129,10 +131,12 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         findViewById(R.id.calculate).setOnClickListener(calc);
         findViewById(R.id.factorial).setOnClickListener(addInput);
         findViewById(R.id.potencia).setOnClickListener(addInput);
+        findViewById(R.id.mod).setOnClickListener(addInput);
     }
 
     /**
      * Este metodo permite gestionar el funcionamiento de los valores en memoria.
+     *
      * @param v instancia de la vista
      */
     public void memoryOperation(View v) {
@@ -215,6 +219,9 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
                 break;
             case (R.id.potencia):
                 _presenter.addOperand("^");
+                break;
+            case (R.id.mod):
+                _presenter.addOperand("%");
                 break;
         }
     }

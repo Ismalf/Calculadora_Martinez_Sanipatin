@@ -113,4 +113,10 @@ public class EngineTest {
         String _result = _engine.calculate("5*((7-8)+5//3");
         assertEquals("Addition failed","Error en sintaxis",_result);
     }
+
+    @Test
+    public void mod1() {
+        String _result = _engine.calculate("5%8");
+        assertEquals("Addition failed","5",_result);
+    }
 }
