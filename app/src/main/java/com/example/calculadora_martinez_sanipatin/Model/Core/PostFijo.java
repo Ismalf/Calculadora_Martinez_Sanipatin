@@ -178,11 +178,12 @@ public class PostFijo {
                 valor = op1 / op2;
                 break;
             case "%":
-                valor = op1<0&&op2<0? -1+((-1*op1)%(-1*op2)):
+                valor = op1 < 0 && op2 < 0 ?
+                        -1*((-1*op1)%(-1*op2)):
                         op1 % op2 < 0 ?
-                        op2 + (op1%op2) :
-                        op2 < 0 ?
-                                op2 + op1 % op2 :
+                            op2 + (op1%op2) :
+                            op2 < 0 ?
+                                op2 + (op1 % op2) :
                                 op1 % op2;
                 break;
             case "^":
