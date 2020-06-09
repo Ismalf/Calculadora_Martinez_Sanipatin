@@ -151,4 +151,9 @@ public class EngineTest {
         String _result = _engine.calculate("(-9)%(-9)");
         assertEquals("Addition failed","0",_result);
     }
+    @Test
+    public void mod8() {
+        String _result = _engine.calculate("-2%(-6)");
+        assertEquals("Addition failed","4",_result);
+    }
 }
