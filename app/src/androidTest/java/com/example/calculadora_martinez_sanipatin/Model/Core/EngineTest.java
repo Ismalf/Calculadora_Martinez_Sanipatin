@@ -127,23 +127,28 @@ public class EngineTest {
     }
     @Test
     public void mod3() {
-        String _result = _engine.calculate("-5%3");
-        assertEquals("Addition failed","-2",_result);
+        String _result = _engine.calculate("(-5)%3");
+        assertEquals("Addition failed","1",_result);
     }
     @Test
     public void mod4() {
-        String _result = _engine.calculate("-5%8");
-        assertEquals("Addition failed","-5",_result);
+        String _result = _engine.calculate("(-5)%8");
+        assertEquals("Addition failed","3",_result);
     }
 
     @Test
     public void mod5() {
         String _result = _engine.calculate("5%(-3)");
-        assertEquals("Addition failed","2",_result);
+        assertEquals("Addition failed","-1",_result);
     }
     @Test
     public void mod6() {
         String _result = _engine.calculate("5%(-8)");
-        assertEquals("Addition failed","5",_result);
+        assertEquals("Addition failed","-3",_result);
+    }
+    @Test
+    public void mod7() {
+        String _result = _engine.calculate("(-9)%(-9)");
+        assertEquals("Addition failed","0",_result);
     }
 }
