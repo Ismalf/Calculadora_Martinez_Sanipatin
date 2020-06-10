@@ -40,6 +40,14 @@ public class Engine {
         }
     }
 
+    /**
+     * Transforma una cadena ingresada por el usuario de tal forma que aquellos números que son
+     * precedidos por un signo '-' se transforma en una expresión de la siguiente manera '-9' -> '(0-9)'
+     * así, se evitan problemas cuando no existen dos operandos, y el signo '-' se usa exclusivamente para
+     * definir el signo del número
+     * @param input lo que el usuario registra en la calculadora
+     * @return cadena transformada para definir claramente los números negativos
+     */
     public String transformNegatives(String input){
         String newString = "";
         boolean isNegative = false;
@@ -77,6 +85,11 @@ public class Engine {
         return newString;
     }
 
+    /**
+     * Realiza una casting sencillo de un caracter a un número
+     * @param c Caracter de una cadena
+     * @return retorna verdadero si el casting se ha logrado correctamente indicando que es un número
+     */
     private boolean isNumber(char c){
         try{
             Float.parseFloat(c+"");
