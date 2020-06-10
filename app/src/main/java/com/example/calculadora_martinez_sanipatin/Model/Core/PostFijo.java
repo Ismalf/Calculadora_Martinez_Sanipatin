@@ -39,6 +39,7 @@ public class PostFijo {
             String s = cadena[i];
             sim = getPriori(s);
             if (sim == 0) { //Es número
+
                 rpn.add(s);
             } else { //Es operador
                 while (pila.isEmpty() == false && Precedencia(pila.StackTop(), s) && sim > 0) // Falta √ y ^ de derecha a izquierda

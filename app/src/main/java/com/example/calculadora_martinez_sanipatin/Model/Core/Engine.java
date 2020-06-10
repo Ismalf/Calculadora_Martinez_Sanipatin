@@ -30,7 +30,7 @@ public class Engine {
      * @return retorna un String del resultado obtenido.
      */
     public String calculate(String input){
-        getStrInfija(input);
+        getStrInfija(transformNegatives(input));
         if(error > 0){
             return "Error en sintaxis";
         }else{
@@ -40,6 +40,51 @@ public class Engine {
         }
     }
 
+    public String transformNegatives(String input){
+        String newString = "";
+        boolean isNegative = false;
+        boolean check = false;
+        for(int i = 0; i < input.length(); i++){
+            char c = input.charAt(i);
+            if(c=='-') {
+                // check if before has a number or operand
+                if (i != 0) {
+                    if (!isNumber(input.charAt(i - 1)) && i + 1 < input.length() && isNumber(input.charAt(i + 1))) {
+                        newString += "(0";
+                        isNegative = true;
+                    }
+                }
+                if(i==0){
+                    newString += "(0";
+                    isNegative = true;
+                }
+            }
+            newString+=input.charAt(i)+"";
+
+            if(isNegative && check){
+                if(i+1<input.length() && !isNumber(input.charAt(i+1)) && input.charAt(i+1)!='.'){
+                    newString += ")";
+                    isNegative = false;
+                }
+                if(i==input.length()-1){
+                    newString += ")";
+                    isNegative = false;
+                }
+            }
+            check = isNegative;
+
+        }
+        return newString;
+    }
+
+    private boolean isNumber(char c){
+        try{
+            Float.parseFloat(c+"");
+            return true;
+        }catch(Exception e){
+            return false;
+        }
+    }
     /**
      * Este metodo retira los los ceros de un resultado con con decimales innecesarios,
      * por ejemplo de un resultado: 4.0 el método retorna: 4 entero.
@@ -93,6 +138,7 @@ public class Engine {
         j = 1;
         nOperadores = 0;
         nNumeros = 0;
+        boolean isNegative = false;
         while( i < str.length() && error == 0){
             c = str.charAt(i);
             if( c != ' '){
@@ -104,6 +150,7 @@ public class Engine {
                     tipo = 4;
                 }
                 if( (atipo == -5 && c == '-') || (atipo == 2 && c == '-')){ //Agrega el 0 en expresiones (-9) ó -5 -> (0-9), 0-5
+                    // se debe transformar -9 -> (0-9)
                     c = '0';
                     j = 0;
                     tipo = 0;

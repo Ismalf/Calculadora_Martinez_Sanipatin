@@ -127,33 +127,53 @@ public class EngineTest {
     }
     @Test
     public void mod3() {
-        String _result = _engine.calculate("(-5)%3");
+        String _result = _engine.calculate("-5%3");
         assertEquals("Addition failed","1",_result);
     }
     @Test
     public void mod4() {
-        String _result = _engine.calculate("(-5)%8");
+        String _result = _engine.calculate("-5%8");
         assertEquals("Addition failed","3",_result);
     }
 
     @Test
     public void mod5() {
-        String _result = _engine.calculate("5%(-3)");
+        String _result = _engine.calculate("5%-3");
         assertEquals("Addition failed","-1",_result);
     }
     @Test
     public void mod6() {
-        String _result = _engine.calculate("5%(-8)");
+        String _result = _engine.calculate("5%-8");
         assertEquals("Addition failed","-3",_result);
     }
     @Test
     public void mod7() {
-        String _result = _engine.calculate("(-9)%(-9)");
+        String _result = _engine.calculate("-9%-9");
         assertEquals("Addition failed","-0",_result);
     }
     @Test
     public void mod8() {
-        String _result = _engine.calculate("(-2)%(-6)");
+        String _result = _engine.calculate("-2%-6");
         assertEquals("Addition failed","-2",_result);
+    }
+    @Test
+    public void transformInput(){
+        String _result = _engine.transformNegatives("1+-3.1");
+        assertEquals("Transform failed","1+(0-3.1)",_result);
+    }
+    @Test
+    public void transformInput2(){
+        String _result = _engine.transformNegatives("-3.1");
+        assertEquals("Transform failed","(0-3.1)",_result);
+    }
+    @Test
+    public void transformInput3(){
+        String _result = _engine.transformNegatives("1-(3.1+1)");
+        assertEquals("Transform failed","1-(3.1+1)",_result);
+    }
+    @Test
+    public void transformInput4(){
+        String _result = _engine.transformNegatives("5%-8");
+        assertEquals("Transform failed","5%(0-8)",_result);
     }
 }
