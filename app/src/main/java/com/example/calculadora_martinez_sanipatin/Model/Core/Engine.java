@@ -110,6 +110,7 @@ public class Engine {
                             }
                         newString += "(" + base + "→" + value + ")";
                         i = j;
+                        i++;
                     } else if (isNumber(input.charAt(i))) { //defines default logarithm with base 10
                         newString += "(10→";
                         while (i < input.length() && (isNumber(input.charAt(i)) || input.charAt(i) == '.')) {
@@ -118,11 +119,11 @@ public class Engine {
                         }
                         newString += ")";
                     }
-                    i++;
                 }
             }
             if (i >= input.length())
                 return newString; // check if it's possible to continue, else return the newly formed string
+
             newString += input.charAt(i) + "";
 
             if (isNegative && check) {
