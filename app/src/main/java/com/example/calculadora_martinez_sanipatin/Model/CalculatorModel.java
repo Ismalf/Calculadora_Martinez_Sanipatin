@@ -63,7 +63,11 @@ public class CalculatorModel implements Calculator.Model {
     public void calculate() {
         _buffer+=_input+"\n";
         _checkbuffer();
-        _input = _engine.calculate(_input);
+        try {
+            _input = _engine.calculate(_input);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         _presenter.showBuffer(_buffer);
         _presenter.showResult(_input);
     }
@@ -76,7 +80,11 @@ public class CalculatorModel implements Calculator.Model {
     public void memoryAdd() {
         if(_input == "") return;
         _memory = _memory == "" ? "0" : _memory;
-        _memory = _engine.calculate(_memory+"+"+_input);
+        try {
+            _memory = _engine.calculate(_memory+"+"+_input);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -85,7 +93,13 @@ public class CalculatorModel implements Calculator.Model {
      */
     @Override
     public void memorySub() {
-        if(!_memory.equals("") && _input != "") _memory = _engine.calculate(_memory+"-"+_input);
+        if(!_memory.equals("") && _input != "") {
+            try {
+                _memory = _engine.calculate(_memory+"-"+_input);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
