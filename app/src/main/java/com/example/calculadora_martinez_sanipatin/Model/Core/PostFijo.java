@@ -14,7 +14,7 @@ public class PostFijo {
      */
     private Vector<String> rpn;
     private String[] cadena;
-    private static final int precition = 100;
+    private static final int precition = 10;
 
     /**
      * Retorna una instancia de una cadena postfijo
@@ -342,6 +342,7 @@ public class PostFijo {
     private static float sin(float val) {
         //val = (float) Math.toRadians(val);
         val = val * (float) (Math.PI / 180);
+        System.out.println(val);
         int i;
         float s = 0;
         int sign = 1;
@@ -349,12 +350,14 @@ public class PostFijo {
             s += sign * potencia(val, i) / factorial(i);
             sign *= -1;
         }
+        System.out.println(s);
         return s;
     }
 
     private static float cos(float val) {
         //val = (float)Math.toRadians(val);
         val = val * (float) (Math.PI / 180);
+        System.out.println(val);
         int i;
         float s = 0;
         int sign = 1;
@@ -362,6 +365,7 @@ public class PostFijo {
             s += sign * potencia(val, i) / factorial(i);
             sign *= -1;
         }
+        System.out.println(s);
         return s;
     }
 }

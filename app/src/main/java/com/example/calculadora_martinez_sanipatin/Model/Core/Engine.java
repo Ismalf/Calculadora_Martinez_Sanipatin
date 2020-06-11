@@ -14,7 +14,8 @@ public class Engine {
      * Atributos de tipo String, int y float, utilizados en la clase
      * para almacenar algun valor.
      */
-    static final double e = 2.71828; //Math.E;
+    private final double e = 2.71828; //Math.E;
+    private int trigFunctions = 0; // 0 for deg, 1 for rad
     private String[] stringInfija;
     public int error = 0;
     private Float resp = 0.0f;
@@ -127,7 +128,7 @@ public class Engine {
                     throw new Exception("Syntax Error");
                 i += 3;
                 int parenthesis = 0;
-                newString += c == 's' ? "(0s" : "(0c";
+                newString += c == 's' ? "("+trigFunctions+"s" : "("+trigFunctions+"c";
                 do {
                     if (input.charAt(i) == '(') parenthesis++;
                     if (input.charAt(i) == ')') parenthesis--;
@@ -294,5 +295,9 @@ public class Engine {
                 stringInfija[i] = cadenaInfija.get(i);
             }
         }
+    }
+
+    public void setTrigFunctions(int trigFunctions) {
+        this.trigFunctions = trigFunctions;
     }
 }

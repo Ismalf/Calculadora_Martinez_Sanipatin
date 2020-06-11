@@ -30,4 +30,17 @@ public class ExampleUnitTest {
         String _result = _engine.makeExplicit("1+log3");
         assertEquals("Transform failed", "1+(10→3)", _result);
     }
+    @Test
+    public void sin1() throws Exception{
+        String _result = _engine.calculate("sin(45)");
+        System.out.println(_result);
+        assertEquals("Sin failed", "0.707106781", _result);
+    }
+
+    @Test
+    public void cos1() throws Exception{
+        String _result = _engine.calculate("cos(45)");
+        System.out.println(_result);
+        assertEquals("Cos failed", "0.707106781", _result);
+    }
 }
