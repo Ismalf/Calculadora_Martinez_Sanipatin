@@ -85,8 +85,10 @@
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/raiz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="√"
 
                 android:background="#00FFFFFF" />
             <Space
@@ -225,12 +227,12 @@
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/raiz"
+                android:id="@+id/coma"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
 
-                android:text="√" />
+                android:text="," />
 
             <Space
                 android:layout_width="wrap_content"
