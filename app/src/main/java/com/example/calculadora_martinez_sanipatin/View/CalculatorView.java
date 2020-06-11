@@ -136,6 +136,8 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         findViewById(R.id.ln).setOnClickListener(addInput);
         findViewById(R.id.raiz).setOnClickListener(addInput);
         findViewById(R.id.coma).setOnClickListener(addInput);
+        findViewById(R.id.seno).setOnClickListener(addInput);
+        findViewById(R.id.coseno).setOnClickListener(addInput);
     }
 
     /**
@@ -238,6 +240,12 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
                 break;
             case (R.id.coma):
                 _presenter.addOperand(",");
+                break;
+            case (R.id.seno):
+                _presenter.addOperand("sin(");
+                break;
+            case (R.id.coseno):
+                _presenter.addOperand("cos(");
                 break;
         }
     }
