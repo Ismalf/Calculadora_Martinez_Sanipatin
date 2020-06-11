@@ -234,7 +234,7 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
                 _presenter.addOperand("ln(");
                 break;
             case (R.id.raiz):
-                _presenter.addOperand("√");
+                _presenter.addOperand("2√");
                 break;
             case (R.id.coma):
                 _presenter.addOperand(",");

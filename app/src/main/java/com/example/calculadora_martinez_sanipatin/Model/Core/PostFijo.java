@@ -192,7 +192,7 @@ public class PostFijo {
                 valor = potencia(op1, op2);
                 break;
             case "√":
-                valor = (float) Math.pow(op2, 1 / op1);
+                valor = raiz(op1,op2);
                 break;
             case "→":
                 valor = log(op1, op2);
@@ -265,6 +265,12 @@ public class PostFijo {
         return r;
     }
 
+    /**
+     * Metodo para calcular la potencia de un numero
+     * @param n valor a calcular
+     * @param e exponente a elevar
+     * @return
+     */
     private static float potencia(float n, float e) {
         Sintactico sin = null;
         float result = n;
@@ -286,6 +292,36 @@ public class PostFijo {
             }
         }
         return result;
+    }
+
+    /**
+     * Metodo para calcular la raiz de un numero
+     * @param e exponente de la raíz
+     * @param m valor a calcular de la raíz
+     * @return resultado de la raíz ingresada
+     */
+    private static float raiz(float e,float m){
+        float i=0;
+        float x1,x2 = 0;
+        Sintactico sin = null;
+        if(m<0){
+            x2 = sin.getError();
+        } else if(m>0){
+            while( (i*i) <= m )
+                i+=0.1;
+            x1=i;
+            for(int j=0;j<10;j++)
+            {
+                x2=m;
+                x2/=x1;
+                x2+=x1;
+                x2/=2;
+                x1=x2;
+            }
+        }else if (m==0){
+            x2 = 0;
+        }
+        return x2;
     }
 
     /**

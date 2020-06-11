@@ -218,6 +218,28 @@ public class EngineTest {
     }
 
     @Test
+    public void raiz1() throws Exception{
+        String _result = _engine.calculate("2√9");
+        System.out.println(_result);
+        assertEquals("Addition failed", "3", _result);
+    }
+
+    @Test
+    public void raiz2() throws Exception{
+        String _result = _engine.calculate("2√2.25");
+        System.out.println(_result);
+        assertEquals("Addition failed", "1.5", _result);
+    }
+
+    @Test
+    public void raiz3() throws Exception{
+        String _result = _engine.calculate("2√0");
+        System.out.println(_result);
+        assertEquals("Addition failed", "0", _result);
+    }
+
+
+    @Test
     public void transformInput() throws Exception {
         String _result = _engine.makeExplicit("1+-3.1");
         assertEquals("Transform failed", "1+(0-3.1)", _result);
