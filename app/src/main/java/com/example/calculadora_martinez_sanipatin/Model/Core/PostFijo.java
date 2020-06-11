@@ -185,16 +185,10 @@ public class PostFijo {
                 valor = op1 / op2;
                 break;
             case "%":
-                valor = op1 < 0 && op2 < 0 ?
-                        -1 * ((-1 * op1) % (-1 * op2)) :
-                        op1 % op2 < 0 ?
-                                op2 + (op1 % op2) :
-                                op2 < 0 ?
-                                        op2 + (op1 % op2) :
-                                        op1 % op2;
+                valor = mod(op1,op2);
                 break;
             case "^":
-                valor = (float) Math.pow(op1, op2);
+                valor = potencia(op1,op2);
                 break;
             case "√":
                 valor = (float) Math.pow(op2, 1 / op1);
@@ -206,6 +200,12 @@ public class PostFijo {
         return String.valueOf(valor);
     }
 
+    /**
+     * Metodo para obtener el logaritmo de un numero en base a un numero
+     * @param b es la base del logaritmo
+     * @param n es el valor a calcular
+     * @return retorna el resultado del logaritmo
+     */
     private static float log(float b, float n) {
         double val = 0;
         int i, accurate = 10, reps = 0;
@@ -219,10 +219,63 @@ public class PostFijo {
         return (float) val / p(10, reps);
     }
 
+    /**
+     * Metodo para sacar el modulo entre dos numeros
+     * @param op1 valor del dividendo
+     * @param op2 valor del divisor
+     * @return retorna el resultado del modulo obtenido entre don numeros
+     */
+    private static float mod(float op1, float op2){
+        float result = 0;
+        if(op1 < 0 && op2 < 0){
+            if(op1 == op2){
+                result = 0;
+            }else{
+                result = -1 * ((-1 * op1) % (-1 * op2));
+            }
+        }else if(op1 < 0){
+            result = op2 - ((op1*-1) % op2);
+        }else if (op2 < 0){
+            result = op2 + (op1 % (op2*-1));
+        }else{
+            result = op1 % op2;
+        }
+        return result;
+    }
+
+    /**
+     * Metodo para
+     * @param x
+     * @param i
+     * @return
+     */
     private static float p(float x, int i) {
         float r = 1.0f;
         for (int j = i; j > 0; j--) r *= x;
         return r;
+    }
+
+    private  static float potencia(float n, float e){
+        Sintactico sin = null;
+        float result=n;
+        if((int)e == 0){
+            result = 1;
+        }else if ((int)e < 0){
+            if(n == 0){
+                result = sin.getError();
+            }else {
+                for(int i=1;i<((int)e)*(-1);i++){
+                    result = result*n;
+                }
+                result = 1/result;
+            }
+
+        }else if((int)e > 0){
+            for(int i=1;i<(int)e;i++){
+                result = result*n;
+            }
+        }
+        return result;
     }
 
     /**
