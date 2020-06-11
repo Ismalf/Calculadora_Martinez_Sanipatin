@@ -201,7 +201,7 @@ public class EngineTest {
         assertEquals("Transform failed", "1+(10→3)", _result);
     }
     @Test
-    public void transformInputlog9() throws Exception {
+    public void transformInputlog7() throws Exception {
         String _result = _engine.makeExplicit("1+log33+2");
         assertEquals("Transform failed", "1+(10→33)+2", _result);
     }
@@ -226,5 +226,19 @@ public class EngineTest {
         String _result = _engine.makeExplicit("log((1+5),3)");
         System.out.println(_result);
         assertEquals("Transform failed", "(3→(1+5))", _result);
+    }
+
+    @Test
+    public void log1() throws Exception {
+        String _result = _engine.calculate("log(3)");
+        System.out.println(_result);
+        assertEquals("Transform failed", "0.47712126", _result);
+    }
+
+    @Test
+    public void log3() throws Exception {
+        String _result = _engine.calculate("ln3");
+        System.out.println(_result);
+        assertEquals("Transform failed", "1.09861228867", _result);
     }
 }

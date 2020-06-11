@@ -97,6 +97,8 @@ public class PostFijo {
                 return 3;
             case "!":
                 return 4;
+            case "→":
+                return 3;
             case "(":
                 return -1;
             case "[":
@@ -180,12 +182,12 @@ public class PostFijo {
                 break;
             case "%":
                 valor = op1 < 0 && op2 < 0 ?
-                        -1*((-1*op1)%(-1*op2)):
+                        -1 * ((-1 * op1) % (-1 * op2)) :
                         op1 % op2 < 0 ?
-                            op2 + (op1%op2) :
-                            op2 < 0 ?
                                 op2 + (op1 % op2) :
-                                op1 % op2;
+                                op2 < 0 ?
+                                        op2 + (op1 % op2) :
+                                        op1 % op2;
                 break;
             case "^":
                 valor = (float) Math.pow(op1, op2);
@@ -193,8 +195,30 @@ public class PostFijo {
             case "√":
                 valor = (float) Math.pow(op2, 1 / op1);
                 break;
+            case "→":
+                valor = log((int) op1, op2);
+                break;
         }
         return String.valueOf(valor);
+    }
+
+    private static float log(int b, float n) {
+        double val = 0;
+        int i, accurate = 10, reps = 0;
+        while (n != 1 && accurate >= 0) {
+            for (i = 0; n >= b; i++) n /= b;
+            n = p(n, 10);
+            val = 10 * (val + i);
+            accurate--;
+            reps++;
+        }
+        return (float) val / p(10, reps);
+    }
+
+    private static float p(float x, int i) {
+        float r = 1.0f;
+        for (int j = i; j > 0; j--) r *= x;
+        return r;
     }
 
     /**

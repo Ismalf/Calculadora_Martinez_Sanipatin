@@ -132,9 +132,14 @@ public class Lexico {
             case '^':
                 i = 4;
                 break;
-            //case '√': i = 4; break;
+            case '√':
+                i = 4;
+                break;
             case '!':
                 i = 5;
+                break;
+            case '→':
+                i = 4;
                 break;
         }
         return i;
