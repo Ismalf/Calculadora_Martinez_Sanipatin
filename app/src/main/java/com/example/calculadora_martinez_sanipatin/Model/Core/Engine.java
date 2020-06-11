@@ -14,7 +14,7 @@ public class Engine {
      * Atributos de tipo String, int y float, utilizados en la clase
      * para almacenar algun valor.
      */
-    static final double e = 2.71828182846; //Math.E;
+    static final double e = 2.71828; //Math.E;
     private String[] stringInfija;
     public int error = 0;
     private Float resp = 0.0f;
@@ -77,7 +77,7 @@ public class Engine {
                     i += 2; //increase counter to ignore letter n
                     if (input.charAt(i) != '(' && !isNumber(input.charAt(i)))
                         throw new Exception("Syntax Error"); // must be ln(3) or ln3
-                    newString += "("+e+"→";
+                    newString += "(("+e+")→";
                     int parenthesis = 0;
                     do {
                         if (input.charAt(i) == '(') parenthesis++;

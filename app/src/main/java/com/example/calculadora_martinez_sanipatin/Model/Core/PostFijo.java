@@ -196,13 +196,13 @@ public class PostFijo {
                 valor = (float) Math.pow(op2, 1 / op1);
                 break;
             case "→":
-                valor = log((int) op1, op2);
+                valor = log(op1, op2);
                 break;
         }
         return String.valueOf(valor);
     }
 
-    private static float log(int b, float n) {
+    private static float log(float b, float n) {
         double val = 0;
         int i, accurate = 10, reps = 0;
         while (n != 1 && accurate >= 0) {

@@ -237,8 +237,8 @@ public class EngineTest {
 
     @Test
     public void log3() throws Exception {
-        String _result = _engine.calculate("ln3");
+        String _result = _engine.calculate("ln(3)");
         System.out.println(_result);
-        assertEquals("Transform failed", "1.09861228867", _result);
+        assertEquals("Transform failed", "2.71828182846", _result);
     }
 }
