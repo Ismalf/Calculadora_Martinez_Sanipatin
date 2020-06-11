@@ -156,7 +156,7 @@ public class EngineTest {
     @Test
     public void mod7() throws Exception {
         String _result = _engine.calculate("-9%-9");
-        assertEquals("Addition failed", "-0", _result);
+        assertEquals("Addition failed", "0", _result);
     }
 
     @Test
