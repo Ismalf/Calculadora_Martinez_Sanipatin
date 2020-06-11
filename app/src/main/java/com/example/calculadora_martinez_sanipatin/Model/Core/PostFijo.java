@@ -14,6 +14,7 @@ public class PostFijo {
      */
     private Vector<String> rpn;
     private String[] cadena;
+    private static final int precition = 100;
 
     /**
      * Retorna una instancia de una cadena postfijo
@@ -185,10 +186,10 @@ public class PostFijo {
                 valor = op1 / op2;
                 break;
             case "%":
-                valor = mod(op1,op2);
+                valor = mod(op1, op2);
                 break;
             case "^":
-                valor = potencia(op1,op2);
+                valor = potencia(op1, op2);
                 break;
             case "√":
                 valor = (float) Math.pow(op2, 1 / op1);
@@ -196,12 +197,19 @@ public class PostFijo {
             case "→":
                 valor = log(op1, op2);
                 break;
+            case "s":
+                valor = sin(op2);
+                break;
+            case "c":
+                valor = cos(op2);
+                break;
         }
         return String.valueOf(valor);
     }
 
     /**
      * Metodo para obtener el logaritmo de un numero en base a un numero
+     *
      * @param b es la base del logaritmo
      * @param n es el valor a calcular
      * @return retorna el resultado del logaritmo
@@ -221,23 +229,24 @@ public class PostFijo {
 
     /**
      * Metodo para sacar el modulo entre dos numeros
+     *
      * @param op1 valor del dividendo
      * @param op2 valor del divisor
      * @return retorna el resultado del modulo obtenido entre don numeros
      */
-    private static float mod(float op1, float op2){
+    private static float mod(float op1, float op2) {
         float result = 0;
-        if(op1 < 0 && op2 < 0){
-            if(op1 == op2){
+        if (op1 < 0 && op2 < 0) {
+            if (op1 == op2) {
                 result = 0;
-            }else{
+            } else {
                 result = -1 * ((-1 * op1) % (-1 * op2));
             }
-        }else if(op1 < 0){
-            result = op2 - ((op1*-1) % op2);
-        }else if (op2 < 0){
-            result = op2 + (op1 % (op2*-1));
-        }else{
+        } else if (op1 < 0) {
+            result = op2 - ((op1 * -1) % op2);
+        } else if (op2 < 0) {
+            result = op2 + (op1 % (op2 * -1));
+        } else {
             result = op1 % op2;
         }
         return result;
@@ -245,6 +254,7 @@ public class PostFijo {
 
     /**
      * Metodo para
+     *
      * @param x
      * @param i
      * @return
@@ -255,24 +265,24 @@ public class PostFijo {
         return r;
     }
 
-    private  static float potencia(float n, float e){
+    private static float potencia(float n, float e) {
         Sintactico sin = null;
-        float result=n;
-        if((int)e == 0){
+        float result = n;
+        if ((int) e == 0) {
             result = 1;
-        }else if ((int)e < 0){
-            if(n == 0){
+        } else if ((int) e < 0) {
+            if (n == 0) {
                 result = sin.getError();
-            }else {
-                for(int i=1;i<((int)e)*(-1);i++){
-                    result = result*n;
+            } else {
+                for (int i = 1; i < ((int) e) * (-1); i++) {
+                    result = result * n;
                 }
-                result = 1/result;
+                result = 1 / result;
             }
 
-        }else if((int)e > 0){
-            for(int i=1;i<(int)e;i++){
-                result = result*n;
+        } else if ((int) e > 0) {
+            for (int i = 1; i < (int) e; i++) {
+                result = result * n;
             }
         }
         return result;
@@ -293,8 +303,30 @@ public class PostFijo {
         return x;
     }
 
-    private static float sin(float val){
-        
+    private static float sin(float val) {
+        //val = (float) Math.toRadians(val);
+        val = val * (float) (Math.PI / 180);
+        int i;
+        float s = 0;
+        int sign = 1;
+        for (i = 1; i < precition; i += 2) {
+            s += sign * potencia(val, i) / factorial(i);
+            sign *= -1;
+        }
+        return s;
+    }
+
+    private static float cos(float val) {
+        //val = (float)Math.toRadians(val);
+        val = val * (float) (Math.PI / 180);
+        int i;
+        float s = 0;
+        int sign = 1;
+        for (i = 0; i < precition; i += 2) {
+            s += sign * potencia(val, i) / factorial(i);
+            sign *= -1;
+        }
+        return s;
     }
 }
 

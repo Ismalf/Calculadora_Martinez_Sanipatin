@@ -311,4 +311,18 @@ public class EngineTest {
         System.out.println(_result);
         assertEquals("Transform failed", "1.49831057", _result);
     }
+
+    @Test
+    public void sin1() throws Exception{
+        String _result = _engine.calculate("sin(45)");
+        System.out.println(_result);
+        assertEquals("Sin failed", "0.707106781", _result);
+    }
+
+    @Test
+    public void cos1() throws Exception{
+        String _result = _engine.calculate("cos(45)");
+        System.out.println(_result);
+        assertEquals("Cos failed", "0.707106781", _result);
+    }
 }
