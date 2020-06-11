@@ -99,6 +99,10 @@ public class PostFijo {
                 return 4;
             case "→":
                 return 3;
+            case "s":
+                return 3;
+            case "c":
+                return 3;
             case "(":
                 return -1;
             case "[":
@@ -234,6 +238,10 @@ public class PostFijo {
         for (i = 1; i < num; i++)
             x = x * (i + 1);
         return x;
+    }
+
+    private static float sin(float val){
+        
     }
 }
 

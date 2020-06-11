@@ -141,6 +141,12 @@ public class Lexico {
             case '→':
                 i = 4;
                 break;
+            case 's':
+                i = 4;
+                break;
+            case 'c':
+                i = 4;
+                break;
         }
         return i;
     }

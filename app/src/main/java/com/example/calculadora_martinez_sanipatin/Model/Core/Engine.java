@@ -54,7 +54,6 @@ public class Engine {
     public String makeExplicit(String input) throws Exception {
         String newString = "";
         boolean isNegative = false;
-        boolean isLog = false;
         boolean check = false;
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
@@ -77,7 +76,7 @@ public class Engine {
                     i += 2; //increase counter to ignore letter n
                     if (input.charAt(i) != '(' && !isNumber(input.charAt(i)))
                         throw new Exception("Syntax Error"); // must be ln(3) or ln3
-                    newString += "(("+e+")→";
+                    newString += "((" + e + ")→";
                     int parenthesis = 0;
                     do {
                         if (input.charAt(i) == '(') parenthesis++;
@@ -87,7 +86,7 @@ public class Engine {
                         i++;
                     } while (i < input.length() && parenthesis != 0);
                     newString += ")";
-                } else if (i + 3 < input.length() && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 'g') { // define a logarithm base n
+                } else if (i + 2 < input.length() && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 'g') { // define a logarithm base n
                     i += 3; //increase counter to ignore letters og
                     if (input.charAt(i) != '(' && !isNumber(input.charAt(i)))
                         throw new Exception("Syntax Error"); // must be log(3) or log3
@@ -122,6 +121,21 @@ public class Engine {
                     }
                 }
             }
+
+            if (c == 's' || c == 'c') { // if is sin
+                if (i + 3 >= input.length() || input.charAt(i + 3) != '(')
+                    throw new Exception("Syntax Error");
+                i += 3;
+                int parenthesis = 0;
+                newString += c == 's' ? "(0s" : "(0c";
+                do {
+                    if (input.charAt(i) == '(') parenthesis++;
+                    if (input.charAt(i) == ')') parenthesis--;
+                    newString += input.charAt(i) + "";
+                } while (++i < input.length() && parenthesis != 0);
+                newString += ")";
+            }
+
             if (i >= input.length())
                 return newString; // check if it's possible to continue, else return the newly formed string
 

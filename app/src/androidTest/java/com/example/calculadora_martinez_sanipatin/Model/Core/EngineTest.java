@@ -227,6 +227,18 @@ public class EngineTest {
         System.out.println(_result);
         assertEquals("Transform failed", "(3→(1+5))", _result);
     }
+    @Test
+    public void transformInputSin1() throws Exception {
+        String _result = _engine.makeExplicit("sin(1+5)");
+        System.out.println(_result);
+        assertEquals("Transform failed", "(0s(1+5))", _result);
+    }
+    @Test
+    public void transformInputCos1() throws Exception {
+        String _result = _engine.makeExplicit("2*cos(1+5)");
+        System.out.println(_result);
+        assertEquals("Transform failed", "2*(0c(1+5))", _result);
+    }
 
     @Test
     public void log1() throws Exception {
