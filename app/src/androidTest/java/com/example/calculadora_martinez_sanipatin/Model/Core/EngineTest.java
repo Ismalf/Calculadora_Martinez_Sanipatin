@@ -160,6 +160,58 @@ public class EngineTest {
     }
 
     @Test
+    public void potencia1() throws Exception{
+        String _result = _engine.calculate("3^3");
+        assertEquals("Addition failed", "27", _result);
+    }
+
+    @Test
+    public void potencia2() throws Exception{
+        String _result = _engine.calculate("-2^5");
+        assertEquals("Addition failed", "-32", _result);
+    }
+
+    @Test
+    public void potencia3() throws Exception{
+        String _result = _engine.calculate("-4^2");
+        assertEquals("Addition failed", "16", _result);
+    }
+
+    @Test
+    public void potencia4() throws Exception{
+        String _result = _engine.calculate("-2.8^3");
+        assertEquals("Addition failed", "-21.952", _result);
+    }
+
+    @Test
+    public void potencia5() throws Exception{
+        String _result = _engine.calculate("2.5^-2");
+        System.out.println(_result);
+        assertEquals("Addition failed", "0.16", _result);
+    }
+
+    @Test
+    public void potencia6() throws Exception{
+        String _result = _engine.calculate("-2.5^-3");
+        System.out.println(_result);
+        assertEquals("Addition failed", "-0.064", _result);
+    }
+
+    @Test
+    public void potencia7() throws Exception{
+        String _result = _engine.calculate("0^3");
+        System.out.println(_result);
+        assertEquals("Addition failed", "0", _result);
+    }
+
+    @Test
+    public void potencia8() throws Exception{
+        String _result = _engine.calculate("0^-3");
+        System.out.println(_result);
+        assertEquals("Addition failed", "Error en sintaxis", _result);
+    }
+
+    @Test
     public void mod8() throws Exception {
         String _result = _engine.calculate("-2%-6");
         assertEquals("Addition failed", "-2", _result);

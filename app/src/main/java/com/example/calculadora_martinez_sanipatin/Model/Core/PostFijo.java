@@ -184,7 +184,7 @@ public class PostFijo {
                 valor = mod(op1,op2);
                 break;
             case "^":
-                valor = (float) Math.pow(op1, op2);
+                valor = potencia(op1,op2);
                 break;
             case "√":
                 valor = (float) Math.pow(op2, 1 / op1);
@@ -249,6 +249,29 @@ public class PostFijo {
         float r = 1.0f;
         for (int j = i; j > 0; j--) r *= x;
         return r;
+    }
+
+    private  static float potencia(float n, float e){
+        Sintactico sin = null;
+        float result=n;
+        if((int)e == 0){
+            result = 1;
+        }else if ((int)e < 0){
+            if(n == 0){
+                result = sin.getError();
+            }else {
+                for(int i=1;i<((int)e)*(-1);i++){
+                    result = result*n;
+                }
+                result = 1/result;
+            }
+
+        }else if((int)e > 0){
+            for(int i=1;i<(int)e;i++){
+                result = result*n;
+            }
+        }
+        return result;
     }
 
     /**
