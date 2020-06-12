@@ -14,7 +14,7 @@ public class PostFijo {
      */
     private Vector<String> rpn;
     private String[] cadena;
-    private static final int precition = 10;
+    private static final int precision = 50;
 
     /**
      * Retorna una instancia de una cadena postfijo
@@ -346,7 +346,7 @@ public class PostFijo {
         int i;
         float s = 0;
         int sign = 1;
-        for (i = 1; i < precition; i += 2) {
+        for (i = 1; i < precision; i += 2) {
             s += sign * potencia(val, i) / factorial(i);
             sign *= -1;
         }
@@ -361,7 +361,7 @@ public class PostFijo {
         int i;
         float s = 0;
         int sign = 1;
-        for (i = 0; i < precition; i += 2) {
+        for (i = 0; i < precision; i += 2) {
             s += sign * potencia(val, i) / factorial(i);
             sign *= -1;
         }

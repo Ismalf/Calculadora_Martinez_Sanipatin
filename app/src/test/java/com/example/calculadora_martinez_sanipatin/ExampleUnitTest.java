@@ -32,7 +32,7 @@ public class ExampleUnitTest {
     }
     @Test
     public void sin1() throws Exception{
-        String _result = _engine.calculate("sin(45)");
+        String _result = _engine.calculate("sin(180)");
         System.out.println(_result);
         assertEquals("Sin failed", "0.707106781", _result);
     }
