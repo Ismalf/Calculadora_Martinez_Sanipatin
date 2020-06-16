@@ -81,6 +81,13 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
             calculate(v);
         }
     };
+
+    private View.OnClickListener convert = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            convertTo(v);
+        }
+    };
     //endregion
 
     /**
@@ -138,6 +145,24 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         findViewById(R.id.coma).setOnClickListener(addInput);
         findViewById(R.id.seno).setOnClickListener(addInput);
         findViewById(R.id.coseno).setOnClickListener(addInput);
+        findViewById(R.id.toBinary).setOnClickListener(convert);
+        findViewById(R.id.toHex).setOnClickListener(convert);
+        findViewById(R.id.toOctal).setOnClickListener(convert);
+    }
+
+    public void convertTo(View v){
+        switch (v.getId()){
+            case R.id.toBinary:
+                _presenter.toBinary();
+                break;
+            case R.id.toOctal:
+                _presenter.toOct();
+                break;
+            case R.id.toHex:
+                _presenter.toHex();
+                break;
+        }
+
     }
 
     /**

@@ -64,53 +64,63 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:clipChildren="false"
             android:gravity="center"
-            android:orientation="horizontal" >
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
+            android:orientation="horizontal">
 
-                android:background="#00FFFFFF" />
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/toBinary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
 
-                android:background="#00FFFFFF" />
+                android:background="#00FFFFFF"
+                android:text="BIN" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/toOctal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
 
-                android:background="#00FFFFFF" />
+                android:background="#00FFFFFF"
+                android:text="OCT" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/toHex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="#00FFFFFF"
+                android:text="HEX" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/memrecall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MR"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF"/>
+                android:text="MR" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,21 +129,24 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:clipChildren="false"
             android:gravity="center"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
                 android:id="@+id/memclear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MC"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF" />
+                android:text="MC" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -143,9 +156,10 @@
                 android:id="@+id/raiz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="√"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF" />
+                android:text="√" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -155,20 +169,23 @@
                 android:id="@+id/seno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="sin"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF" />
+                android:text="sin" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
                 android:id="@+id/coseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="cos"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF"/>
+                android:text="cos" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -177,7 +194,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:clipChildren="false"
             android:gravity="center"
             android:orientation="horizontal">
@@ -246,7 +263,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:clipChildren="false"
             android:gravity="center"
             android:orientation="horizontal">
@@ -311,54 +328,63 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:clipChildren="false"
             android:gravity="center"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
                 android:id="@+id/memadd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="M+"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF"/>
+                android:text="M+" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
                 android:id="@+id/memsub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="M-"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF"/>
+                android:text="M-" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
                 android:id="@+id/factorial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="!"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF"/>
+                android:text="!" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
                 android:id="@+id/potencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="^"
+                android:background="#00FFFFFF"
 
-                android:background="#00FFFFFF"/>
+                android:text="^" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -367,7 +393,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center|center_horizontal"
             android:orientation="horizontal">
 
@@ -426,13 +452,12 @@
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                 />
+                android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -496,7 +521,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -560,7 +585,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:orientation="horizontal">
 

@@ -91,4 +91,19 @@ public class CalculatorPresenter implements Calculator.Presenter {
      */
     @Override
     public void memoryClear() { _model.memoryClear(); }
+
+    @Override
+    public void toHex() {
+        _model.toHex();
+    }
+
+    @Override
+    public void toOct() {
+        _model.toOct();
+    }
+
+    @Override
+    public void toBinary() {
+        _model.toBinary();
+    }
 }

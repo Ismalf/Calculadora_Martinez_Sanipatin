@@ -29,6 +29,9 @@ public interface Calculator {
         void memorySub();
         void memoryRecall();
         void memoryClear();
+        void toHex();
+        void toOct();
+        void toBinary();
     }
 
     /**
@@ -46,5 +49,8 @@ public interface Calculator {
         void memorySub();
         void memoryRecall();
         void memoryClear();
+        void toHex();
+        void toOct();
+        void toBinary();
     }
 }
