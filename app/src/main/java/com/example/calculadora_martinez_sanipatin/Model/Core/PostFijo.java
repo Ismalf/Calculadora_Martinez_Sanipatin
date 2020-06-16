@@ -334,15 +334,16 @@ public class PostFijo {
      * @return el valor calculado del factorial del número ingresado, 1 en caso de que el valor ingresado
      * sea menor o igual a 0
      */
-    private static float factorial(int num) {
+    private static float factorial(int num) throws Exception {
+        if (num < 0)throw new Exception("Error");
         float x = 1;
         int i;
-        for (i = 1; i < num; i++)
+        for (i = 1; i <= num; i++)
             x = x * (i + 1);
         return x;
     }
 
-    private static float sin(float val) {
+    private static float sin(float val) throws Exception {
         //val = (float) Math.toRadians(val);
         val = val * (float) (Math.PI / 180);
         System.out.println(val);
@@ -354,11 +355,10 @@ public class PostFijo {
             sign *= -1;
         }
         System.out.println(s);
-        s = (float) Math.toRadians(s);
         return s;
     }
 
-    private static float cos(float val) {
+    private static float cos(float val) throws Exception {
         //val = (float)Math.toRadians(val);
         val = val * (float) (Math.PI / 180);
         System.out.println(val);
@@ -370,7 +370,6 @@ public class PostFijo {
             sign *= -1;
         }
         System.out.println(s);
-        s = (float) Math.toRadians(s);
         return s;
     }
 }
