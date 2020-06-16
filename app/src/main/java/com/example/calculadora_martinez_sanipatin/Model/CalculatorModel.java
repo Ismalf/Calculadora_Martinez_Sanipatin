@@ -69,6 +69,7 @@ public class CalculatorModel implements Calculator.Model {
             _input = _engine.calculate(_input);
         } catch (Exception e) {
             e.printStackTrace();
+            _input = "Error de sintaxis";
         }
         _presenter.showBuffer(_buffer);
         _presenter.showResult(_input);

@@ -127,7 +127,7 @@ public class PostFijo {
      *
      * @return float: número decimal resultante de efectuar las operaciones marcadas en
      */
-    public float getValor() {
+    public float getValor() throws Exception {
         Stack pila = new Stack(cadena.length);
         String s, valor;
         float op1, op2;
@@ -170,7 +170,7 @@ public class PostFijo {
      * @return una cadena con el resultado de las operaciones matemáticas efectuadas sobre los datos
      * de ingreso
      */
-    private static String operar(String str, float op1, float op2) {
+    private static String operar(String str, float op1, float op2) throws Exception {
         float valor = 0;
         switch (str) {
             case "+":
@@ -192,7 +192,7 @@ public class PostFijo {
                 valor = potencia(op1, op2);
                 break;
             case "√":
-                valor = raiz(op1,op2);
+                valor = raiz(op1, op2);
                 break;
             case "→":
                 valor = log(op1, op2);
@@ -214,8 +214,10 @@ public class PostFijo {
      * @param n es el valor a calcular
      * @return retorna el resultado del logaritmo
      */
-    private static float log(float b, float n) {
+    private static float log(float b, float n) throws Exception {
         double val = 0;
+        System.out.println(b);
+        if (b < 0 || n < 0) throw new Exception("Error");
         int i, accurate = 10, reps = 0;
         while (n != 1 && accurate >= 0) {
             for (i = 0; n >= b; i++) n /= b;
@@ -267,6 +269,7 @@ public class PostFijo {
 
     /**
      * Metodo para calcular la potencia de un numero
+     *
      * @param n valor a calcular
      * @param e exponente a elevar
      * @return
@@ -296,29 +299,29 @@ public class PostFijo {
 
     /**
      * Metodo para calcular la raiz de un numero
+     *
      * @param e exponente de la raíz
      * @param m valor a calcular de la raíz
      * @return resultado de la raíz ingresada
      */
-    private static float raiz(float e,float m){
-        float i=0;
-        float x1,x2 = 0;
+    private static float raiz(float e, float m) {
+        float i = 0;
+        float x1, x2 = 0;
         Sintactico sin = null;
-        if(m<0){
+        if (m < 0) {
             x2 = sin.getError();
-        } else if(m>0){
-            while( (i*i) <= m )
-                i+=0.1;
-            x1=i;
-            for(int j=0;j<10;j++)
-            {
-                x2=m;
-                x2/=x1;
-                x2+=x1;
-                x2/=2;
-                x1=x2;
+        } else if (m > 0) {
+            while ((i * i) <= m)
+                i += 0.1;
+            x1 = i;
+            for (int j = 0; j < 10; j++) {
+                x2 = m;
+                x2 /= x1;
+                x2 += x1;
+                x2 /= 2;
+                x1 = x2;
             }
-        }else if (m==0){
+        } else if (m == 0) {
             x2 = 0;
         }
         return x2;
@@ -351,6 +354,7 @@ public class PostFijo {
             sign *= -1;
         }
         System.out.println(s);
+        s = (float) Math.toRadians(s);
         return s;
     }
 
@@ -366,6 +370,7 @@ public class PostFijo {
             sign *= -1;
         }
         System.out.println(s);
+        s = (float) Math.toRadians(s);
         return s;
     }
 }
