@@ -75,51 +75,30 @@ public class Engine {
             if (c == 'l') { // check if it's logarithm base e or n
                 if (i + 1 < input.length() && input.charAt(i + 1) == 'n') { // define a logarithm base e
                     i += 2; //increase counter to ignore letter n
-                    if (input.charAt(i) != '(' && !isNumber(input.charAt(i)))
+                    if (input.charAt(i) != '(')
                         throw new Exception("Syntax Error"); // must be ln(3) or ln3
                     newString += "((" + e + ")→";
                     int parenthesis = 0;
                     do {
                         if (input.charAt(i) == '(') parenthesis++;
                         if (input.charAt(i) == ')') parenthesis--;
-
                         newString += input.charAt(i) + "";
                         i++;
                     } while (i < input.length() && parenthesis != 0);
                     newString += ")";
                 } else if (i + 2 < input.length() && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 'g') { // define a logarithm base n
                     i += 3; //increase counter to ignore letters og
-                    if (input.charAt(i) != '(' && !isNumber(input.charAt(i)))
+                    if (input.charAt(i) != '(')
                         throw new Exception("Syntax Error"); // must be log(3) or log3
-                    if (input.charAt(i) == '(') { // defines a function of type log(a,b), where b is the base
-                        int j = i; // search for ','
-                        String base = "";
-                        int parenthesis = 0;
-                        do {
-                            j++;
-                            if (input.charAt(j) == '(') parenthesis++;
-                            if (input.charAt(j) == ')') parenthesis--;
-                        } while (j < input.length() && parenthesis != 0);
-
-                        String value = input.substring(++i, ++j);
-                        System.out.println(value);
-                        if (input.charAt(j) == ')')
-                            base = "10";
-                        else
-                            while (isNumber(input.charAt(++j)) || input.charAt(j) == '.') {
-                                base += input.charAt(j);
-                            }
-                        newString += "(" + base + "→" + value + ")";
-                        i = j;
+                    newString += "(10→";
+                    int parenthesis = 0;
+                    do {
+                        if (input.charAt(i) == '(') parenthesis++;
+                        if (input.charAt(i) == ')') parenthesis--;
+                        newString += input.charAt(i) + "";
                         i++;
-                    } else if (isNumber(input.charAt(i))) { //defines default logarithm with base 10
-                        newString += "(10→";
-                        while (i < input.length() && (isNumber(input.charAt(i)) || input.charAt(i) == '.')) {
-                            newString += input.charAt(i);
-                            i++;
-                        }
-                        newString += ")";
-                    }
+                    } while (i < input.length() && parenthesis != 0);
+                    newString += ")";
                 }
             }
 

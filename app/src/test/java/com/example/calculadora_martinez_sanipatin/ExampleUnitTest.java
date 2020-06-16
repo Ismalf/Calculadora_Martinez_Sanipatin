@@ -36,7 +36,18 @@ public class ExampleUnitTest {
         System.out.println(_result);
         assertEquals("Sin failed", "0.707106781", _result);
     }
-
+    @Test
+    public void ln() throws Exception{
+        String _result = _engine.calculate("ln(180)");
+        System.out.println(_result);
+        assertEquals("Sin failed", "0.707106781", _result);
+    }
+    @Test
+    public void log() throws Exception{
+        String _result = _engine.calculate("log(-180)");
+        System.out.println(_result);
+        assertEquals("Sin failed", "2.2552726", _result);
+    }
     @Test
     public void cos1() throws Exception{
         String _result = _engine.calculate("cos(45)");
