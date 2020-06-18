@@ -338,7 +338,7 @@ public class PostFijo {
         if (num < 0)throw new Exception("Error");
         float x = 1;
         int i;
-        for (i = 1; i <= num; i++)
+        for (i = 1; i < num; i++)
             x = x * (i + 1);
         return x;
     }
