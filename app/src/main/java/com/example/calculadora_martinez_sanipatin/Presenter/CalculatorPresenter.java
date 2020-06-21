@@ -2,6 +2,8 @@ package com.example.calculadora_martinez_sanipatin.Presenter;
 
 import com.example.calculadora_martinez_sanipatin.Interfaces.Calculator;
 import com.example.calculadora_martinez_sanipatin.Model.CalculatorModel;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 /**
  * Esta clase implementa los metodos de la Interfaz Calculator.Presenter,
@@ -14,83 +16,106 @@ public class CalculatorPresenter implements Calculator.Presenter {
 
     /**
      * Declaracion de las Interfaces tanto del Modelo como de la Vista
-     *
      */
     private Calculator.View _view;
     private Calculator.Model _model;
 
     /**
      * Constructor de la Clase CalculatorPresenter
+     *
      * @param view instancia de la vista
      */
-    public CalculatorPresenter(Calculator.View view){
+    public CalculatorPresenter(Calculator.View view) {
         _view = view;
         _model = new CalculatorModel(this);
     }
 
     /**
      * Invoca al metodo implementado en la Interfaz de la Vista.
+     *
      * @param result es el valor enviado desde el Presentador a la Vista
      */
     @Override
-    public void showResult(String result) { _view.showResult(result); }
+    public void showResult(String result) {
+        _view.showResult(result);
+    }
 
     /**
      * Invoca el metodo implementado en la Interfaz de la Vista
+     *
      * @param buffer
      */
     @Override
-    public void showBuffer(String buffer) { _view.showBuffer(buffer); }
+    public void showBuffer(String buffer) {
+        _view.showBuffer(buffer);
+    }
 
     /**
      * Crea una nueva instancia para la interfaz _model de tipo CalculatorModel
      */
     @Override
-    public void emptyData() { _model = new CalculatorModel(this); }
+    public void emptyData() {
+        _model = new CalculatorModel(this);
+    }
 
     /**
      * Invoca el metodo implementado en la Interfaz del Modelo para calcular un resultado
      */
     @Override
-    public void calculate() { _model.calculate(); }
+    public void calculate() {
+        _model.calculate();
+    }
 
     /**
      * Invoca el metodo implementado en la Intefaz del Modelo para agregar operandos
+     *
      * @param operand es el parametro tipo String de una operacion
      */
     @Override
-    public void addOperand(String operand) { _model.addOperand(operand); }
+    public void addOperand(String operand) {
+        _model.addOperand(operand);
+    }
 
     /**
      * Invoca el metodo implementado en la Intefaz del Modelo para remover operandos
      */
     @Override
-    public void removeOperand() { _model.removeOperand(); }
+    public void removeOperand() {
+        _model.removeOperand();
+    }
 
     /**
      * Invoca el metodo implementado en la Interfaz del Modelo para agregar cierto valor a memoria
      */
     @Override
-    public void memoryAdd() { _model.memoryAdd(); }
+    public void memoryAdd() {
+        _model.memoryAdd();
+    }
 
     /**
      * Invoca el metodo implementado en la Interfaz del Modelo para substraer cierto valor de la memoria
      */
     @Override
-    public void memorySub() { _model.memorySub(); }
+    public void memorySub() {
+        _model.memorySub();
+    }
 
     /**
      * Invoca el metodo implementado en la Interfaz del Modelo para agregar cierto valor ingresado,
      * al valor guardado en memoria.
      */
     @Override
-    public void memoryRecall() { _model.memoryRecall(); }
+    public void memoryRecall() {
+        _model.memoryRecall();
+    }
 
     /**
      * Invoca el metodo implementado en la Interfaz del Modelo para limpiar los valores almacenados en memoria
      */
     @Override
-    public void memoryClear() { _model.memoryClear(); }
+    public void memoryClear() {
+        _model.memoryClear();
+    }
 
     @Override
     public void toHex() {
@@ -105,6 +130,23 @@ public class CalculatorPresenter implements Calculator.Presenter {
     @Override
     public void toBinary() {
         _model.toBinary();
+    }
+
+    @Override
+    public LineGraphSeries<DataPoint> getGraphicOf(String function)  {
+        LineGraphSeries<DataPoint> series = new LineGraphSeries();
+        float x = -360;
+
+        for (int i = 0; i <= 8000; i++) {
+            try {
+                float y = Float.parseFloat(_model.exposeApi().calculate(function+"("+x+")"));
+                series.appendData(new DataPoint(x, y), true, 8000);
+                x += 0.1;
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        return series;
     }
 
 }

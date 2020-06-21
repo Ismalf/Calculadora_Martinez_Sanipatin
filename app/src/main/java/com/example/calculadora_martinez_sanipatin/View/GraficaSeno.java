@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculadora_martinez_sanipatin.Interfaces.Calculator;
 import com.example.calculadora_martinez_sanipatin.Model.Core.Sintactico;
+import com.example.calculadora_martinez_sanipatin.Presenter.CalculatorPresenter;
 import com.example.calculadora_martinez_sanipatin.R;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -17,42 +18,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class GraficaSeno extends AppCompatActivity {
+public class GraficaSeno extends AppCompatActivity implements Calculator.View{
 
     private Calculator.Presenter _presenter;
-    private LineGraphSeries<DataPoint> series;
-    private GraphView funcion;
-    private static final int precision = 50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_grafica_seno);
-        LineGraphSeries<DataPoint> series;
-        GraphView funcion;
-        float x,y;
-        x=-360;
-        funcion = findViewById(R.id.graph_view_seno);
-
-        funcion.getViewport().setScrollable(true);
-        funcion.getViewport().setScrollableY(true);
-
-        funcion.getViewport().setScalable(true);
-        funcion.getViewport().setScalableY(true);
-
-        funcion.getViewport().setXAxisBoundsManual(true);
-        funcion.getViewport().setMinX(-360);
-        funcion.getViewport().setMaxX(360);
-
-        series = new LineGraphSeries<DataPoint>();
-        for(int i = 0; i <= 8000; i++){
-            y = seno(x);
-            System.out.println("X:"+x+",Y:"+y);
-            series.appendData(new DataPoint(x,y),true,8000);
-            x+=0.1;
-        }
-        funcion.addSeries(series);
+        _presenter = new CalculatorPresenter(this);
+        GraphView function;
+        function = findViewById(R.id.graph_view_seno);
+        function.getViewport().setScrollable(true);
+        function.getViewport().setScrollableY(true);
+        function.getViewport().setScalable(true);
+        function.getViewport().setScalableY(true);
+        function.getViewport().setXAxisBoundsManual(true);
+        function.getViewport().setMinX(-360);
+        function.getViewport().setMaxX(360);
+        function.addSeries(_presenter.getGraphicOf("sin"));
     }
 
     @Override
@@ -80,50 +64,13 @@ public class GraficaSeno extends AppCompatActivity {
         }
     }
 
-    public float seno(float val){
-        //val = (float) Math.toRadians(val);
-        val = val * (float) (Math.PI / 180);
-        System.out.println(val);
-        int i;
-        float s = 0;
-        int sign = 1;
-        for (i = 1; i < precision; i += 2) {
-            s += sign * potencia(val, i) / factorial(i);
-            sign *= -1;
-        }
-        System.out.println(s);
-        return s;
+    @Override
+    public void showResult(String result) {
+
     }
 
-    private static float potencia(float n, float e) {
-        Sintactico sin = null;
-        float result = n;
-        if ((int) e == 0) {
-            result = 1;
-        } else if ((int) e < 0) {
-            if (n == 0) {
-                result = sin.getError();
-            } else {
-                for (int i = 1; i < ((int) e) * (-1); i++) {
-                    result = result * n;
-                }
-                result = 1 / result;
-            }
+    @Override
+    public void showBuffer(String buffer) {
 
-        } else if ((int) e > 0) {
-            for (int i = 1; i < (int) e; i++) {
-                result = result * n;
-            }
-        }
-        return result;
-    }
-
-    private static float factorial(int num){
-        if (num < 0);
-        float x = 1;
-        int i;
-        for (i = 1; i < num; i++)
-            x = x * (i + 1);
-        return x;
     }
 }

@@ -181,6 +181,11 @@ public class CalculatorModel implements Calculator.Model {
         _presenter.showResult(_input);
     }
 
+    @Override
+    public Engine exposeApi() {
+        return this._engine;
+    }
+
     /**
      * Este metodo almacena las operaciones ingresadas por el usuario,
      * creando un registro a manera de historial de cada operacion o

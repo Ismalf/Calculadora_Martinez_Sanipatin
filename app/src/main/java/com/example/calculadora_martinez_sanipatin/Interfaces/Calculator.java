@@ -1,5 +1,9 @@
 package com.example.calculadora_martinez_sanipatin.Interfaces;
 
+import com.example.calculadora_martinez_sanipatin.Model.Core.Engine;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
 /**
  * Se implementa tres Interfaces, una para el Modelo, otra para la Vista y otra para el Presentador.
  *
@@ -32,6 +36,7 @@ public interface Calculator {
         void toHex();
         void toOct();
         void toBinary();
+        Engine exposeApi();
     }
 
     /**
@@ -52,5 +57,6 @@ public interface Calculator {
         void toHex();
         void toOct();
         void toBinary();
+        LineGraphSeries<DataPoint> getGraphicOf(String function);
     }
 }
