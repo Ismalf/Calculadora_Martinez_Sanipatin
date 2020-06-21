@@ -106,4 +106,5 @@ public class CalculatorPresenter implements Calculator.Presenter {
     public void toBinary() {
         _model.toBinary();
     }
+
 }

@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Calculadora_Martinez_Sanipatin</string>
+    <string name="app_grafica_seno">Gráfica Seno</string>
+    <string name="app_grafica_coseno">Gráfica Coseno</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -1,5 +1,10 @@
 package com.example.calculadora_martinez_sanipatin.Model.Core;
 
+import com.example.calculadora_martinez_sanipatin.R;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
 import java.util.Vector;
 
 /**
@@ -356,6 +361,10 @@ public class PostFijo {
         }
         System.out.println(s);
         return s;
+    }
+
+    private static void grafica(GraphView funcionSeno, LineGraphSeries<DataPoint> serieSeno){
+        //GRAFICA SENO
     }
 
     private static float cos(float val) throws Exception {

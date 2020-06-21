@@ -204,4 +204,5 @@ public class CalculatorModel implements Calculator.Model {
             return false;
         }
     }
+
 }

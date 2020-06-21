@@ -1,8 +1,8 @@
 package com.example.calculadora_martinez_sanipatin.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -120,9 +120,13 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         switch (item.getItemId()){
             case R.id.grafica_seno:
                 Toast.makeText(getApplicationContext(),"Grafica del Seno",Toast.LENGTH_SHORT).show();
+                Intent objGraficaSeno = new Intent(CalculatorView.this, GraficaSeno.class);
+                startActivity(objGraficaSeno);
                 return true;
             case R.id.grafica_coseno:
                 Toast.makeText(getApplicationContext(),"Grafica del Coseno",Toast.LENGTH_SHORT).show();
+                Intent objGraficaCoseno = new Intent(CalculatorView.this, GraficaCoseno.class);
+                startActivity(objGraficaCoseno);
                 return true;
             default:
                 super.onOptionsItemSelected(item);

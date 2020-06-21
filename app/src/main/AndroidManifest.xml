@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.Grafica"></activity>
+        <activity android:name=".View.GraficaCoseno"
+            android:label="@string/app_grafica_coseno"></activity>
+        <activity android:name=".View.GraficaSeno"
+            android:label="@string/app_grafica_seno"/>
         <activity android:name=".View.CalculatorView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
