@@ -1,10 +1,14 @@
 package com.example.calculadora_martinez_sanipatin.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.calculadora_martinez_sanipatin.Interfaces.Calculator;
 import com.example.calculadora_martinez_sanipatin.Presenter.CalculatorPresenter;
@@ -103,6 +107,27 @@ public class CalculatorView extends AppCompatActivity implements Calculator.View
         _resultsBuffer = findViewById(R.id.results);
         _presenter = new CalculatorPresenter(this);
         _init();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+         getMenuInflater().inflate(R.menu.menu_grafica, menu);
+         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.grafica_seno:
+                Toast.makeText(getApplicationContext(),"Grafica del Seno",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.grafica_coseno:
+                Toast.makeText(getApplicationContext(),"Grafica del Coseno",Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                super.onOptionsItemSelected(item);
+                return false;
+        }
     }
 
     //region methods
